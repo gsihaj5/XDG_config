@@ -58,5 +58,8 @@ feh --bg-fill ~/wallpaper/city.jpg
 #load compositor
 picom &
 
+#execute xmobar for status bar
+xmobar ~/.config/xmobar/xmobarrc
+
 #load execute WM
 exec xmonad

@@ -3,6 +3,10 @@ import XMonad
 import Data.Monoid
 import System.Exit
 
+import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.DynamicLog
+import XMonad.Util.Run
+import XMonad.Util.SpawnOnce
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
@@ -173,7 +177,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = tiled ||| Mirror tiled ||| Full
+myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -225,7 +229,11 @@ myEventHook = mempty
 -- Perform an arbitrary action on each internal state change or X event.
 -- See the 'XMonad.Hooks.DynamicLog' extension for examples.
 --
-myLogHook = return ()
+myLogHook xmproc = dynamicLogWithPP xmobarPP
+	{ ppOutput          = hPutStrLn xmproc
+        , ppTitle           = xmobarColor "darkgreen"  "" . shorten 20
+        , ppHiddenNoWindows = xmobarColor "grey" ""
+        }
 
 ------------------------------------------------------------------------
 -- Startup hook
@@ -242,7 +250,9 @@ myStartupHook = return ()
 
 -- Run xmonad with the settings you specify. No need to modify this.
 --
-main = xmonad defaults
+main = do
+  xmproc <- spawnPipe "xmobar ~/.config/xmobar/xmobarrc"
+  xmonad $ docks $ defaults xmproc
 
 -- A structure containing your configuration settings, overriding
 -- fields in the default config. Any you don't override, will
@@ -250,7 +260,7 @@ main = xmonad defaults
 --
 -- No need to modify this.
 --
-defaults = def {
+defaults xmproc = def {
       -- simple stuff
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
@@ -269,7 +279,7 @@ defaults = def {
         layoutHook         = myLayout,
         manageHook         = myManageHook,
         handleEventHook    = myEventHook,
-        logHook            = myLogHook,
+        logHook            = myLogHook xmproc,
         startupHook        = myStartupHook
     }
 

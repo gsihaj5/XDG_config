@@ -7,6 +7,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
 import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
+import XMonad.Util.EZConfig
 import XMonad.Layout.Spacing
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -55,9 +56,13 @@ myFocusedBorderColor = "#6a91c4"
 -- Key bindings. Add, modify or remove key bindings here.
 --
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
-
     -- launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
+
+    --volume
+    , ((modm,               0xffbf     ), spawn "amixer -c 1 set Master 2-")
+
+    , ((modm,               0xffc0     ), spawn "amixer -c 1 set Master 2+")
 
     -- launch dmenu
     , ((modm,               xK_p     ), spawn "dmenu_run")

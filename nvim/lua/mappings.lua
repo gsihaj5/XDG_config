@@ -44,10 +44,10 @@ nmap('<C-k>', '<C-w>k')
 nmap('<C-l>', '<C-w>l')
 
 -- window resize
-nmap('<S-k>', ':res -1<cr>')
-nmap('<S-j>', ':res +1<cr>')
-nmap('<S-h>', ':vert res -1<cr>')
-nmap('<S-l>', ':vert res +1<cr>')
+nmap('<A-k>', ':res -1<cr>')
+nmap('<A-j>', ':res +1<cr>')
+nmap('<A-h>', ':vert res -1<cr>')
+nmap('<A-l>', ':vert res +1<cr>')
 
 -- TABS
 nmap('<C-n><C-t>', ':tabnew<cr>')

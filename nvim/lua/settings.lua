@@ -26,4 +26,5 @@ vim.cmd("syntax on")
 vim.cmd("colorscheme gruvbox")
 vim.cmd("set t_Co=256")
 vim.cmd("highlight Normal ctermbg=NONE guibg=NONE")
-vim.cmd("let g:gruvbox_transparent_bg = 1")
+vim.cmd("let g:gruvbox_transparent_bg = 0")
+

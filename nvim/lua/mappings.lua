@@ -53,5 +53,8 @@ nmap('<A-l>', ':vert res +1<cr>')
 nmap('<C-n><C-t>', ':tabnew<cr>')
 nmap('<C-c><C-t>', ':tabclose<cr>')
 
-nmap('n<Tab>', ':tabn<cr>')
-nmap('p<Tab>', ':tabp<cr>')
+nmap('<C-n><Tab>', ':tabn<cr>')
+nmap('<C-p><Tab>', ':tabp<cr>')
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "

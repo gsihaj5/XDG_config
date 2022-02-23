@@ -13,8 +13,10 @@ return require('packer').startup(function()
 
   --status bar
   use 'vim-airline/vim-airline'
-
   use 'powerline/powerline'
+
+  --tree explorer
+  use 'preservim/nerdtree'
 
 
 end)

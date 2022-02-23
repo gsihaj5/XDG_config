@@ -1,2 +1,11 @@
-discord
-pulse
+*
+
+!X11/
+!alacritty/
+!fish/
+!nvim/
+!ranger/
+!neofetch/
+!xmobar/
+!xmonad/
+!.gitignore/

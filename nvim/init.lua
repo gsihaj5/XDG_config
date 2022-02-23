@@ -1,5 +1,6 @@
 require('plugins')
 --plugin settings meant to settings mappings and properties for plugins
+require('plugins-settings')
 
 
 --lsp configuration

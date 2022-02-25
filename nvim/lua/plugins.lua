@@ -6,6 +6,7 @@ return require('packer').startup(function()
   use 'neovim/nvim-lspconfig'
 
   -- lsp installer
+  -- use :LspInstall
   use 'williamboman/nvim-lsp-installer'
 
   -- color theme

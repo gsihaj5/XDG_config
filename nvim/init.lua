@@ -6,6 +6,7 @@ require('plugins-settings')
 require('lsp.denols')
 require('lsp.psalm')
 require('lsp.sumneko_lua')
+require('lsp.intelephense')
 
 --this is basic settings
 require('settings')

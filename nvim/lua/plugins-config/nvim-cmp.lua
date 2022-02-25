@@ -57,6 +57,3 @@
       { name = 'cmdline' }
     })
   })
-
-  -- Setup lspconfig.
-  -- include capabilites on each lsp settigns and assign inside setup

@@ -1,5 +1,4 @@
 local sumneko_bin_folder = "/home/gerry/.local/share/nvim/lsp_servers/sumneko_lua/extension/server/bin/"
-local on_attach = require('lsp.mappings_on_attach')
 local sumneko_binary_path = sumneko_bin_folder .. "lua-language-server"
 local sumneko_main_path = sumneko_bin_folder .. "main.lua"
 local capabilities = require('cmp_nvim_lsp')
@@ -7,7 +6,6 @@ local capabilities = require('cmp_nvim_lsp')
 
 return require('lspconfig').sumneko_lua.setup{
     capabilities = capabilities;
-    on_attach = on_attach,
     cmd = {sumneko_binary_path, "-E", sumneko_main_path};
   settings = {
     Lua = {

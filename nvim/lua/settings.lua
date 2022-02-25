@@ -22,6 +22,7 @@ vim.o.expandtab = false -- expand tab to spaces
 
 vim.cmd("syntax on")
 
+vim.cmd('v:lua.vim.lsp.omnifunc')
 --theme settings
 vim.cmd("colorscheme gruvbox")
 vim.cmd("set t_Co=256")

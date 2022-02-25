@@ -30,4 +30,9 @@ return require('packer').startup(function()
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
 
+  --coc
+  use {'neoclide/coc.nvim', run = 'yarn install'}
+  --dependency for vim blade
+  use 'jwalton512/vim-blade'
+
 end)

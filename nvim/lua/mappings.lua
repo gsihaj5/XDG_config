@@ -56,8 +56,6 @@ nmap('<C-c><C-t>', ':tabclose<cr>')
 nmap('<C-n><Tab>', ':tabn<cr>')
 nmap('<C-p><Tab>', ':tabp<cr>')
 
-vim.g.mapleader = " "
-
 nmap('<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>')
 nmap('[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
 nmap(']d', '<cmd>lua vim.diagnostic.goto_next()<CR>')

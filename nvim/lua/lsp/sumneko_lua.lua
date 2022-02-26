@@ -1,4 +1,4 @@
-local sumneko_bin_folder = "~/.local/share/nvim/lsp_servers/sumneko_lua/extension/server/bin/"
+local sumneko_bin_folder = "/home/gerry/.local/share/nvim/lsp_servers/sumneko_lua/extension/server/bin/"
 local sumneko_binary_path = sumneko_bin_folder .. "lua-language-server"
 local sumneko_main_path = sumneko_bin_folder .. "main.lua"
 local capabilities = require('cmp_nvim_lsp')

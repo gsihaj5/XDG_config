@@ -35,4 +35,10 @@ return require('packer').startup(function()
   --dependency for vim blade
   use 'jwalton512/vim-blade'
 
+  --telescope for file finder
+  use {
+  	'nvim-telescope/telescope.nvim',
+  	requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
 end)

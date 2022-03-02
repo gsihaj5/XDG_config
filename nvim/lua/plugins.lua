@@ -48,4 +48,16 @@ return require('packer').startup(function()
   --tag completion
   use 'alvan/vim-closetag'
 
+  --gui icons for lsp
+  use { 'tami5/lspsaga.nvim' }
+
+  -- fancy error for diagnostic
+  use {
+  	"folke/trouble.nvim",
+  	requires = "kyazdani42/nvim-web-devicons",
+  	config = function()
+    	require("trouble").setup { }
+  	end
+  }
+
 end)

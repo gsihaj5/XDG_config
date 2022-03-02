@@ -56,3 +56,5 @@ nmap('<C-c><C-t>', ':tabclose<cr>')
 nmap('<C-n><Tab>', ':tabn<cr>')
 nmap('<C-p><Tab>', ':tabp<cr>')
 
+-- clear search highlight
+nmap('<space>,', ':let @/ = ""<cr>')

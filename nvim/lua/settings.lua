@@ -20,7 +20,7 @@ vim.o.shiftwidth = 4 -- indentation rule
 vim.o.formatoptions = 'qnj1' -- q  - comment formatting; n - numbered lists; j - remove comment when joining lines; 1 - don't break after one-letter word
 vim.o.expandtab = false -- expand tab to spaces
 
-vim.cmd("syntax on")
+vim.cmd(":syntax on")
 
 vim.cmd('v:lua.vim.lsp.omnifunc')
 --theme settings

@@ -45,4 +45,7 @@ return require('packer').startup(function()
   use 'mxw/vim-jsx'
   use 'pangloss/vim-javascript'
 
+  --tag completion
+  use 'alvan/vim-closetag'
+
 end)

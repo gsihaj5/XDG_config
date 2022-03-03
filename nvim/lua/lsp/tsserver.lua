@@ -6,6 +6,9 @@ local tsserver_binary_path = tsserver_bin_folder .. "typescript-language-server"
 
 
 return require('lspconfig').tsserver.setup{
-  capabilities = capabilities,
-  cmd = {tsserver_binary_path, "--stdio"}
+  	capabilities = capabilities,
+  	cmd = {tsserver_binary_path, "--stdio"},
+  	on_attach = function(client)
+    	client.resolved_capabilities.document_formatting = false
+  	end,
 }

@@ -5,6 +5,8 @@ require('plugins-settings')
 --lsp configuration
 --require('lsp.denols')
 require('lsp.tsserver')
+require('lsp.efm')
+
 require('lsp.psalm')
 require('lsp.sumneko_lua')
 require('lsp.intelephense')

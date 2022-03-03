@@ -3,4 +3,7 @@ local capabilities = require('cmp_nvim_lsp')
 
 return require('lspconfig').intelephense.setup{
     capabilities = capabilities,
+  	on_attach = function(client)
+    	client.resolved_capabilities.document_formatting = false
+  	end,
 }

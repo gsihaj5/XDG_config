@@ -3,7 +3,8 @@ require('plugins')
 require('plugins-settings')
 
 --lsp configuration
-require('lsp.denols')
+--require('lsp.denols')
+require('lsp.tsserver')
 require('lsp.psalm')
 require('lsp.sumneko_lua')
 require('lsp.intelephense')

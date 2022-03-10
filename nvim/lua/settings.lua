@@ -26,6 +26,8 @@ vim.cmd('v:lua.vim.lsp.omnifunc')
 --theme settings
 vim.cmd("colorscheme gruvbox")
 vim.cmd("set t_Co=256")
+vim.cmd("set cc=80")
+vim.cmd("highlight ColorColumn ctermbg=lightgrey guibg=NONE")
 vim.cmd("highlight Normal ctermbg=NONE guibg=NONE")
 vim.cmd("let g:gruvbox_transparent_bg = 0")
 

@@ -12,12 +12,15 @@ return require('packer').startup(function()
   -- color theme
   use 'morhetz/gruvbox'
 
-  --status bar
+  -- status bar
   use 'vim-airline/vim-airline'
   use 'powerline/powerline'
 
-  --tree explorer
+  -- tree explorer
   use 'preservim/nerdtree'
+
+  -- commenter
+  use 'scrooloose/nerdcommenter'
 
 
   -- auto completion

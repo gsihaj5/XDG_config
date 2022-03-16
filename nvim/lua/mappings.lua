@@ -59,5 +59,5 @@ nmap('<C-p><Tab>', ':tabp<cr>')
 -- clear search highlight
 nmap('<space>,', ':let @/ = ""<cr>')
 
--- commenter 
-nmap(',/', ':call NERDComment("x", "toggle")<CR>')
+-- commenter
+nmap(',/', ':call nerdcommenter#Comment(0, "toggle")<CR>')

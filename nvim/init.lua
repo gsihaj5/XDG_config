@@ -11,6 +11,7 @@ require('lsp.psalm')
 require('lsp.sumneko_lua')
 require('lsp.intelephense')
 require('lsp.tailwindcss')
+require('lsp.jdtls')
 
 --this is basic settings
 require('settings')

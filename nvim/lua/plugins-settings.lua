@@ -12,6 +12,7 @@ autocmd.BufEnter = { '*', function()
 		if filetype == 'blade' then
 			vim.cmd("source $HOME/.config/nvim/lua/plugins-config/coc.vim")
 		else
+			vim.cmd("let b:coc_suggest_disable = 1")
 			require('plugins-config.nvim-cmp')
 			require('plugins-config.builtin-lsp')
 		end

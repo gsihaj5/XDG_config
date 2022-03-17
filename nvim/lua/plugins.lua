@@ -33,6 +33,9 @@ return require('packer').startup(function()
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
 
+  -- pictogram for auto completion
+  use "onsails/lspkind-nvim"
+
   --coc
   use {'neoclide/coc.nvim', run = 'yarn install'}
   --dependency for vim blade

@@ -50,10 +50,10 @@ nmap('<A-h>', ':vert res -1<cr>')
 nmap('<A-l>', ':vert res +1<cr>')
 
 -- TABS
-nmap('<C-n><C-t>', ':tabnew<cr>')
-nmap('<C-c><C-t>', ':tabclose<cr>')
+-- nmap('<C-n><C-t>', ':tabnew<cr>')
+-- nmap('<C-c><C-t>', ':tabclose<cr>')
 
-nmap('<C-n><Tab>', ':tabn<cr>')
+-- nmap('<C-n><Tab>', ':tabn<cr>')
 nmap('<C-p><Tab>', ':tabp<cr>')
 
 -- clear search highlight
@@ -61,3 +61,4 @@ nmap('<space>,', ':let @/ = ""<cr>')
 
 -- commenter
 nmap(',/', ':call nerdcommenter#Comment(0, "toggle")<CR>')
+

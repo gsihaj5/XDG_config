@@ -14,7 +14,7 @@ end
 	nmap('gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
 	nmap('K', '<cmd>lua vim.lsp.buf.hover()<CR>')
 	nmap('gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
-	nmap('<C-K>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
+	--nmap('<C-K>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
 	nmap('<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
 	nmap('<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
 	nmap('<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')

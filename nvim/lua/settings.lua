@@ -9,7 +9,6 @@ vim.o.number = true -- line number on the left
 vim.o.numberwidth = 3 -- always reserve 3 spaces for line number
 vim.o.signcolumn = 'yes' -- keep 1 column for coc.vim  check
 vim.o.modelines = 0
-vim.o.showcmd = true -- display command in bottom bar
 vim.o.relativenumber = true --relative number based on cursor pos
 
 -- White characters
@@ -22,7 +21,6 @@ vim.o.expandtab = false -- expand tab to spaces
 
 vim.cmd(":syntax on")
 
-vim.cmd('v:lua.vim.lsp.omnifunc')
 --theme settings
 vim.cmd("colorscheme gruvbox")
 vim.cmd("set t_Co=256")
@@ -30,4 +28,6 @@ vim.cmd("set cc=80")
 vim.cmd("highlight ColorColumn ctermbg=lightgrey guibg=NONE")
 vim.cmd("highlight Normal ctermbg=NONE guibg=NONE")
 vim.cmd("let g:gruvbox_transparent_bg = 0")
+
+vim.cmd("set completeopt=menu,menuone")
 

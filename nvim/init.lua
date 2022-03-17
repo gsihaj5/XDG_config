@@ -12,6 +12,7 @@ require('lsp.sumneko_lua')
 require('lsp.intelephense')
 require('lsp.tailwindcss')
 require('lsp.jdtls')
+require('lsp.pylsp')
 
 --this is basic settings
 require('settings')

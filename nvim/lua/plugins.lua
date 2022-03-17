@@ -54,6 +54,9 @@ return require('packer').startup(function()
   --tag completion
   use 'alvan/vim-closetag'
 
+  --icons
+  use 'ryanoasis/vim-devicons'
+
   --gui icons for lsp
   use { 'tami5/lspsaga.nvim' }
 

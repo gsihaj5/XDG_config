@@ -31,3 +31,5 @@ vim.cmd("let g:gruvbox_transparent_bg = 0")
 
 vim.cmd("set completeopt=menu,menuone")
 
+vim.cmd("set encoding=utf8")
+

@@ -109,50 +109,17 @@ window:
 
 # Font configuration
 font:
-  # Normal (roman) font face
   normal:
-    # Font family
-    #
-    # Default:
-    #   - (macOS) Menlo
-    #   - (Linux/BSD) monospace
-    #   - (Windows) Consolas
-    family: JetBrainsMono
-
-    # The `style` can be specified to pick a specific face.
+    family: JetBrainsMono Nerd Font
     style: Regular
-
-  # Bold font face
   bold:
-    # Font family
-    #
-    # If the bold family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family: JetBrainsMono
-
-    # The `style` can be specified to pick a specific face.
+    family: JetBrainsMono Nerd Font
     style: Bold
-
-  # Italic font face
   italic:
-    # Font family
-    #
-    # If the italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family: JetBrainsMono
-
-    # The `style` can be specified to pick a specific face.
+    family: JetBrainsMono Nerd Font
     style: Italic
-
-  # Bold italic font face
   bold_italic:
-    # Font family
-    #
-    # If the bold italic family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family: JetBrainsMono
-
-    # The `style` can be specified to pick a specific face.
+    family: JetBrainsMono Nerd Font
     style: Bold Italic
 
   # Point size

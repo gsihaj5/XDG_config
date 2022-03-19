@@ -80,4 +80,13 @@ return require('packer').startup(function()
   use 'tpope/vim-fugitive'
   use 'junegunn/gv.vim'
 
+  use {'nvim-treesitter/playground',
+  	requires = {'nvim-treesitter/nvim-treesitter'},
+	cmd='TSPlaygroundToggle',
+	config = function()
+		require('nvim-treesitter.configs').setup({})
+	end
+  }
+
+
 end)

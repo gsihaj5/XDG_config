@@ -69,4 +69,15 @@ return require('packer').startup(function()
   	end
   }
 
+  -- UML tools
+  --use 'scrooloose/vim-slumlord'
+  use 'tyru/open-browser.vim'
+  use 'aklt/plantuml-syntax'
+  use 'weirongxu/plantuml-previewer.vim'
+
+  --git
+  -- branch visualization
+  use 'tpope/vim-fugitive'
+  use 'junegunn/gv.vim'
+
 end)

@@ -62,3 +62,11 @@ nmap('<space>,', ':let @/ = ""<cr>')
 -- commenter
 nmap(',/', ':call nerdcommenter#Comment(0, "toggle")<CR>')
 
+-- git
+nmap('<space>gs', ':G<CR>')
+nmap('<space>gq', ':Gdiff :0<CR>')
+nmap('<space>gh', ':diffget //2<CR>')
+nmap('<space>gl', ':diffget //3<CR>')
+nmap('<space>gc', ':Git commit<CR>')
+nmap('<space>gp', ':Git push<CR>')
+

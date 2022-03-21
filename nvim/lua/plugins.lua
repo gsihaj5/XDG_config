@@ -11,6 +11,7 @@ return require('packer').startup(function()
 
   -- color theme
   use 'morhetz/gruvbox'
+  use 'arcticicestudio/nord-vim'
 
   -- status bar
   use 'vim-airline/vim-airline'

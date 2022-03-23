@@ -45,3 +45,6 @@ set -g theme_project_dir_length 1
 set -g theme_newline_cursor yes
 set -g theme_newline_prompt '$ '
 
+function gs
+	git status
+end

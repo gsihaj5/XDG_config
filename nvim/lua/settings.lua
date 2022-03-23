@@ -22,7 +22,7 @@ vim.o.expandtab = false -- expand tab to spaces
 vim.cmd(":syntax on")
 
 --theme settings
-vim.cmd("colorscheme nord")
+vim.cmd("colorscheme gruvbox")
 vim.cmd("set t_Co=256")
 vim.cmd("set cc=80")
 vim.cmd("highlight ColorColumn ctermbg=lightgrey guibg=NONE")

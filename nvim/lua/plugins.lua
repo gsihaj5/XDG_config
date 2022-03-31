@@ -52,6 +52,12 @@ return require('packer').startup(function()
   use 'mxw/vim-jsx'
   use 'pangloss/vim-javascript'
 
+  --java syntax highlight
+  use 'uiiaoo/java-syntax.vim'
+
+  --c syntax highlight
+  use 'bfrg/vim-cpp-modern'
+
   --tag completion
   use 'alvan/vim-closetag'
 

@@ -13,6 +13,7 @@ require('lsp.intelephense')
 require('lsp.tailwindcss')
 require('lsp.jdtls')
 require('lsp.pylsp')
+require('lsp.clangd')
 
 --this is basic settings
 require('settings')

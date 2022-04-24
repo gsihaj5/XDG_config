@@ -58,6 +58,12 @@ return require('packer').startup(function()
   --c syntax highlight
   use 'bfrg/vim-cpp-modern'
 
+  --python syntax highlight
+  use {
+	  'numirias/semshi',
+	  cmd=':UpdateRemotePlugins',
+  }
+
   --tag completion
   use 'alvan/vim-closetag'
 
@@ -94,6 +100,9 @@ return require('packer').startup(function()
 		require('nvim-treesitter.configs').setup({})
 	end
   }
+
+  -- copy to clipboard
+  use 'christoomey/vim-system-copy'
 
 
 end)

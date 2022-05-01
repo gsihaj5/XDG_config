@@ -7,6 +7,8 @@ require('plugins-settings')
 require('lsp.tsserver')
 require('lsp.efm')
 
+require('lsp.vuels')
+
 require('lsp.psalm')
 require('lsp.sumneko_lua')
 require('lsp.intelephense')

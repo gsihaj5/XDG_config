@@ -24,7 +24,8 @@ return require('lspconfig').efm.setup {
       		["javascript.jsx"] = {eslint},
       		typescript = {eslint},
       		["typescript.tsx"] = {eslint},
-      		typescriptreact = {eslint}
+      		typescriptreact = {eslint},
+			vue = {eslint}
     	}
   	},
   	filetypes = {
@@ -33,6 +34,7 @@ return require('lspconfig').efm.setup {
     	"javascript.jsx",
     	"typescript",
     	"typescript.tsx",
-    	"typescriptreact"
+    	"typescriptreact",
+    	"vue"
   	},
 }

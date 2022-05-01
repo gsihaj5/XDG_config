@@ -69,4 +69,3 @@ nmap('<space>gh', ':diffget //2<CR>')
 nmap('<space>gl', ':diffget //3<CR>')
 nmap('<space>gc', ':Git commit<CR>')
 nmap('<space>gp', ':Git push<CR>')
-

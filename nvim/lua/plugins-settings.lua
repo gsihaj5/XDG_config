@@ -4,6 +4,7 @@ vim.cmd('let g:airline_powerline_fonts = 1')
 vim.cmd('nnoremap <space>n :NERDTreeToggle<CR>')
 require('plugins-config.telescope')
 require('plugins-config.vim-closetag')
+require('plugins-config.luasnip-conf')
 
 local autocmd = require('au')
 

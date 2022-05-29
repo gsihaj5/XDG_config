@@ -48,3 +48,4 @@ set -g theme_newline_prompt '$ '
 function gs
 	git status
 end
+

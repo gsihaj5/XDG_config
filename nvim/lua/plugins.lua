@@ -83,7 +83,7 @@ return require('packer').startup(function()
   }
 
   -- UML tools
-  --use 'scrooloose/vim-slumlord'
+  use 'scrooloose/vim-slumlord'
   use 'tyru/open-browser.vim'
   use 'aklt/plantuml-syntax'
   use 'weirongxu/plantuml-previewer.vim'

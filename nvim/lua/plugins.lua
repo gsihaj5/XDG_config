@@ -47,7 +47,13 @@ return require('packer').startup(function()
   	'nvim-telescope/telescope.nvim',
   	requires = { {'nvim-lua/plenary.nvim'} }
   }
-  
+
+  -- harpoon
+  use {
+  	'ThePrimeagen/harpoon',
+  	requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
   --js syntax highlight
   use 'mxw/vim-jsx'
   use 'pangloss/vim-javascript'

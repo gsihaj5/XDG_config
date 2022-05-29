@@ -69,3 +69,7 @@ nmap('<space>gh', ':diffget //2<CR>')
 nmap('<space>gl', ':diffget //3<CR>')
 nmap('<space>gc', ':Git commit<CR>')
 nmap('<space>gp', ':Git push<CR>')
+
+-- harpoon
+nmap('<C-q>', ":lua require('harpoon.ui').toggle_quick_menu()<CR>")
+nmap('<C-a>', ":lua require('harpoon.mark').add_file()<CR>")

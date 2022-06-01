@@ -72,4 +72,4 @@ nmap('<space>gp', ':Git push<CR>')
 
 -- harpoon
 nmap('<C-q>', ":lua require('harpoon.ui').toggle_quick_menu()<CR>")
-nmap('<C-a>', ":lua require('harpoon.mark').add_file()<CR>")
+nmap('<C-p>', ":lua require('harpoon.mark').add_file()<CR>")

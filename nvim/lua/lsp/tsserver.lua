@@ -9,6 +9,6 @@ return require('lspconfig').tsserver.setup{
   	capabilities = capabilities,
   	cmd = {tsserver_binary_path, "--stdio"},
   	on_attach = function(client)
-    	client.resolved_capabilities.document_formatting = false
+    	client.resolved_capabilities.document_formatting = true
   	end,
 }

@@ -73,3 +73,25 @@ nmap('<space>gp', ':Git push<CR>')
 -- harpoon
 nmap('<C-q>', ":lua require('harpoon.ui').toggle_quick_menu()<CR>")
 nmap('<C-p>', ":lua require('harpoon.mark').add_file()<CR>")
+
+-- vimspector
+nmap('<space>da',' :call vimspector#Launch()<CR>')
+nmap('<space>dc',' :call GotoWindow(g:vimspector_session_windows.code)<CR>')
+nmap('<space>dv',' :call GotoWindow(g:vimspector_session_windows.variables)<CR>')
+nmap('<space>dw',' :call GotoWindow(g:vimspector_session_windows.watches)<CR>')
+nmap('<space>ds',' :call GotoWindow(g:vimspector_session_windows.stack_trace)<CR>')
+nmap('<space>do',' :call GotoWindow(g:vimspector_session_windows.output)<CR>')
+nmap('<space>di',' :call AddToWatch()<CR>')
+nmap('<space>dx',' :call vimspector#Reset()<CR>')
+nmap('<space>dX',' :call vimspector#ClearBreakpoints()<CR>')
+--nmap('<S-k>',' :call vimspector#StepOut()<CR>')
+--nmap('<S-l>',' :call vimspector#StepInto()<CR>')
+--nmap('<S-j>',' :call vimspector#StepOver()<CR>')
+nmap('<space>d_',' :call vimspector#Restart()<CR>')
+nmap('<space>dn',' :call vimspector#Continue()<CR>')
+nmap('<space>drc',' :call vimspector#RunToCursor()<CR>')
+nmap('<space>dh',' :call vimspector#ToggleBreakpoint()<CR>')
+nmap('<space>de',' :call vimspector#ToggleConditionalBreakpoint()<CR>')
+
+-- dbms
+nmap('<space>od', ':VDToggleDatabase<CR>')

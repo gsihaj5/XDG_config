@@ -5,7 +5,7 @@ require('plugins-settings')
 --lsp configuration
 --require('lsp.denols')
 require('lsp.tsserver')
-require('lsp.efm')
+--require('lsp.efm')
 
 require('lsp.vuels')
 

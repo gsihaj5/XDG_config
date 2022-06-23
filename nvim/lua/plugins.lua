@@ -110,5 +110,15 @@ return require('packer').startup(function()
   -- copy to clipboard
   use 'christoomey/vim-system-copy'
 
+  -- debugger
+  use 'puremourning/vimspector'
+
+  -- dbms
+  use {
+	  'dinhhuy258/vim-database',
+	  cmd=':UpdateRemotePlugins',
+	  branch='master'
+  }
+
 
 end)

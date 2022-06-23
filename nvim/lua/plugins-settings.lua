@@ -6,6 +6,7 @@ require('plugins-config.telescope')
 require('plugins-config.vim-closetag')
 require('plugins-config.luasnip-conf')
 require('plugins-config.vimspector')
+require('plugins-config.nerdcommenter')
 
 local autocmd = require('au')
 

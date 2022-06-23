@@ -9,7 +9,7 @@ require('lsp.tsserver')
 
 require('lsp.vuels')
 
-require('lsp.psalm')
+--require('lsp.psalm')
 require('lsp.sumneko_lua')
 require('lsp.intelephense')
 require('lsp.tailwindcss')

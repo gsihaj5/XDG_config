@@ -7,6 +7,9 @@ local capabilities = require('cmp_nvim_lsp')
 return require('lspconfig').sumneko_lua.setup{
     capabilities = capabilities;
     cmd = {sumneko_binary_path, "-E", sumneko_main_path};
+	root_dir = function()
+    	return vim.fn.getcwd()
+  	end,
   	settings = {
     	Lua = {
 			format = {

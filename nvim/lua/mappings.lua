@@ -60,8 +60,11 @@ nmap('<C-p><Tab>', ':tabp<cr>')
 nmap('<space>,', ':let @/ = ""<cr>')
 
 -- commenter
-nmap(',/', ':call NERDComment("n", "toggle")<CR>')
-nmap(',,', ':call NERDComment("n", "sexy")<CR>')
+nmap(',/', ':call nerdcommenter#Comment("n", "toggle")<CR>')
+nmap(',,', ':call nerdcommenter#Comment("n", "sexy")<CR>')
+
+vmap(',/', ':call nerdcommenter#Comment("x", "toggle")<CR>')
+vmap(',,', ':call nerdcommenter#Comment("x", "sexy")<CR>')
 
 -- git
 nmap('<space>gs', ':G<CR>')

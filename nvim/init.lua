@@ -8,10 +8,14 @@ require('lsp.tsserver')
 --require('lsp.efm')
 
 require('lsp.vuels')
+require('lsp.bladelsp')
 
---require('lsp.psalm')
-require('lsp.sumneko_lua')
+-- php
+require('lsp.psalm')
 require('lsp.intelephense')
+require('lsp.phpactor')
+
+require('lsp.sumneko_lua')
 require('lsp.tailwindcss')
 require('lsp.jdtls')
 require('lsp.pylsp')

@@ -19,6 +19,12 @@ vim.o.shiftwidth = 4 -- indentation rule
 vim.o.formatoptions = 'qnj1' -- q  - comment formatting; n - numbered lists; j - remove comment when joining lines; 1 - don't break after one-letter word
 vim.o.expandtab = false -- expand tab to spaces
 
+-- code folding
+vim.o.foldenable = true
+vim.o.foldlevel = 20
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+
 vim.cmd(":syntax on")
 
 --theme settings

@@ -99,6 +99,8 @@ return require('packer').startup(function()
   use 'tpope/vim-fugitive'
   use 'junegunn/gv.vim'
 
+  use'nvim-treesitter/nvim-treesitter'
+
   use {'nvim-treesitter/playground',
   	requires = {'nvim-treesitter/nvim-treesitter'},
 	cmd='TSPlaygroundToggle',
@@ -114,11 +116,7 @@ return require('packer').startup(function()
   use 'puremourning/vimspector'
 
   -- dbms
-  use {
-	  'dinhhuy258/vim-database',
-	  cmd=':UpdateRemotePlugins',
-	  branch='master'
-  }
-
+	use 'tpope/vim-dadbod'
+	use 'kristijanhusak/vim-dadbod-ui'
 
 end)

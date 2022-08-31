@@ -98,4 +98,3 @@ nmap('<space>dh',' :call vimspector#ToggleBreakpoint()<CR>')
 nmap('<space>de',' :call vimspector#ToggleConditionalBreakpoint()<CR>')
 
 -- dbms
-nmap('<space>od', ':VDToggleDatabase<CR>')

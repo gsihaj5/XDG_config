@@ -8,18 +8,20 @@ require('plugins-config.luasnip-conf')
 require('plugins-config.vimspector')
 require('plugins-config.nerdcommenter')
 
-local autocmd = require('au')
+--local autocmd = require('au')
 
-autocmd.BufEnter = { '*', function()
-		local filetype = vim.bo.filetype
-		if filetype == 'blade' then
-			vim.cmd("source $HOME/.config/nvim/lua/plugins-config/coc.vim")
-		else
-			vim.cmd("let b:coc_suggest_disable = 1")
-			require('plugins-config.nvim-cmp')
-			require('plugins-config.builtin-lsp')
-		end
-    end,
-}
+--autocmd.BufEnter = { '*', function()
+		--local filetype = vim.bo.filetype
+		--if filetype == 'blade' then
+			--vim.cmd("source $HOME/.config/nvim/lua/plugins-config/coc.vim")
+		--else
+			--vim.cmd("let b:coc_suggest_disable = 1")
+			--require('plugins-config.nvim-cmp')
+			--require('plugins-config.builtin-lsp')
+		--end
+    --end,
+--}
+require('plugins-config.nvim-cmp')
+require('plugins-config.builtin-lsp')
 
 

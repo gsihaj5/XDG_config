@@ -60,6 +60,9 @@ picom &
 
 #execute xmobar for status bar
 #xmobar ~/.config/xmobar/xmobarrc &
+#switch caps and escape
+setxkbmap -option caps:escape
+
 
 #load execute WM
 exec xmonad

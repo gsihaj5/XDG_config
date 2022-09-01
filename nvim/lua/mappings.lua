@@ -97,4 +97,14 @@ nmap('<space>drc',' :call vimspector#RunToCursor()<CR>')
 nmap('<space>dh',' :call vimspector#ToggleBreakpoint()<CR>')
 nmap('<space>de',' :call vimspector#ToggleConditionalBreakpoint()<CR>')
 
--- dbms
+-- luasnip
+--imap('<Tab>', ':call luasnip#expand_or_jumpable() ? "<Plug>luasnip-expand-or-jump" : "<Tab>"')
+
+--imap('<S-Tab>', '<cmd>lua require"luasnip".jump(-1)<CR>')
+
+--vmap('<Tab>', '<cmd>lua require"luasnip".jump(1)<CR>')
+--vmap('<S-Tab>', '<cmd>lua require"luasnip".jump(-1)<CR>')
+
+--imap('<C-E>', 'luasnip#choice_active() ? "<Plug>luasnip-next-choice" : "<C-E>"')
+
+--vmap('<C-E>', 'luasnip#choice_active() ? "<Plug>luasnip-next-choice" : "<C-E>"')

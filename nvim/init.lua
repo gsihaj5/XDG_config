@@ -9,6 +9,8 @@ require('lsp.tsserver')
 
 require('lsp.vuels')
 require('lsp.bladelsp')
+require('lsp.omnisharp')
+--require('lsp.csharp_ls')
 
 -- php
 require('lsp.psalm')

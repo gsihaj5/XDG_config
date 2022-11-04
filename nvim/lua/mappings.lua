@@ -98,13 +98,19 @@ nmap('<space>dh', ' :call vimspector#ToggleBreakpoint()<CR>')
 nmap('<space>de', ' :call vimspector#ToggleConditionalBreakpoint()<CR>')
 
 -- luasnip
---imap('<Tab>', ':call luasnip#expand_or_jumpable() ? "<Plug>luasnip-expand-or-jump" : "<Tab>"')
-
---imap('<S-Tab>', '<cmd>lua require"luasnip".jump(-1)<CR>')
-
---vmap('<Tab>', '<cmd>lua require"luasnip".jump(1)<CR>')
---vmap('<S-Tab>', '<cmd>lua require"luasnip".jump(-1)<CR>')
-
---imap('<C-E>', 'luasnip#choice_active() ? "<Plug>luasnip-next-choice" : "<C-E>"')
-
---vmap('<C-E>', 'luasnip#choice_active() ? "<Plug>luasnip-next-choice" : "<C-E>"')
+local ls = require('luasnip')
+vim.keymap.set({ "i", "s" }, "<C-j>", function()
+	if ls.expand_or_jumpable() then
+		ls.expand_or_jump()
+	end
+end)
+vim.keymap.set({ "i", "s" }, "<C-k>", function()
+	if ls.expand_or_jumpable(-1) then
+		ls.expand_or_jump(-1)
+	end
+end)
+vim.keymap.set("i", "<c-l>", function()
+	if ls.choice_active() then
+		ls.change_choice(1)
+	end
+end)

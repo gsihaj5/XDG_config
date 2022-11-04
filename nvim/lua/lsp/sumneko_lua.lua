@@ -2,7 +2,7 @@ local sumneko_bin_folder = "/home/gerry/.local/share/nvim/lsp_servers/sumneko_lu
 local sumneko_binary_path = sumneko_bin_folder .. "lua-language-server"
 local sumneko_main_path = sumneko_bin_folder .. "main.lua"
 local capabilities = require('cmp_nvim_lsp')
-  .update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  .default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 return require('lspconfig').sumneko_lua.setup{
     capabilities = capabilities;

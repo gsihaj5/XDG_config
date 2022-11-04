@@ -2,7 +2,7 @@ local jdtls_folder = "/home/gerry/.local/share/nvim/lsp_servers/jdtls/"
 local jdtls_bin_folder = jdtls_folder .. "bin/"
 local jdtls_binary_path = jdtls_bin_folder .. "jdtls"
 local capabilities = require('cmp_nvim_lsp')
-  .update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  .default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 

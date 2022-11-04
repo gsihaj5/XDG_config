@@ -38,9 +38,9 @@ return require('packer').startup(function()
 	use "onsails/lspkind-nvim"
 
 	--coc
-	use { 'neoclide/coc.nvim', run = 'yarn install' }
+	--use { 'neoclide/coc.nvim', run = 'yarn install' }
 	--dependency for vim blade
-	use 'jwalton512/vim-blade'
+	--use 'jwalton512/vim-blade'
 
 	--telescope for file finder
 	use {
@@ -69,6 +69,10 @@ return require('packer').startup(function()
 		'numirias/semshi',
 		cmd = ':UpdateRemotePlugins',
 	}
+
+	--c# syntax highlight
+	use 'jlcrochet/vim-cs'
+
 
 	--tag completion
 	use 'alvan/vim-closetag'

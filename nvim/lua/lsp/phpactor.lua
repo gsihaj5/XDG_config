@@ -1,5 +1,5 @@
 local capabilities = require('cmp_nvim_lsp')
-  .update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  .default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local phpactor_bin_folder= "/home/gerry/.local/share/nvim/lsp_servers/phpactor-source/bin"
 local phpactor_executable = phpactor_bin_folder .. '/phpactor'
 

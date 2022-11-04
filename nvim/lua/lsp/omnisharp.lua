@@ -3,7 +3,7 @@
 local omnisharp_folder = "/home/gerry/.local/omnisharp"
 local omnisharp_binary_path = omnisharp_folder .. "/run"
 local capabilities = require('cmp_nvim_lsp')
-	.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+	.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 
 return require('lspconfig').omnisharp.setup {

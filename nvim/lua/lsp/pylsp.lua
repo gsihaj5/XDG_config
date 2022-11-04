@@ -1,5 +1,5 @@
 local capabilities = require('cmp_nvim_lsp')
-  .update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  .default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local jdtls_folder = "/home/gerry/.local/share/nvim/lsp_servers/pylsp/"
 local jdtls_bin_folder = jdtls_folder .. "venv/bin/pylsp"
 

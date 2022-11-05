@@ -1,4 +1,4 @@
-local su = require('luasnip-util')
+local su = require('plugins-config.luasnip.luasnip-util')
 
 return {
 	su.s("req", su.fmt(

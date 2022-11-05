@@ -10,6 +10,7 @@ local path = "plugins-config.luasnip."
 
 local filetypes = {
 	"lua",
+	"cs",
 }
 local all_snippets = require(path .. 'all-snippets')
 ls.add_snippets("all", all_snippets)

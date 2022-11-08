@@ -1,13 +1,13 @@
-Config { font = "xft:Jetbrains Mono:size=10:bold:antialias=true"
+Config { font = "xft:JetBrainsMono Nerd Font:size=10:bold:antialias=true"
         , borderColor = "black"
         , border = TopB
         , bgColor = "black"
         , fgColor = "grey"
         , position = TopW L 100
         , commands = [ 
-						  Run Weather "CYVR" [
+						  Run Weather "WARR" [
 						  	"-t",
-							"<tempC>C",
+							"<fn=1>\xfa0f</fn> <tempC>C",
 							"-L", "18",
 							"-H","25",
 							"--normal","green",
@@ -16,8 +16,14 @@ Config { font = "xft:Jetbrains Mono:size=10:bold:antialias=true"
 						] 36000
                         , Run Network "eth0" ["-L","0","-H","32","--normal","green","--high","red"] 10
                         , Run Network "eth1" ["-L","0","-H","32","--normal","green","--high","red"] 10
-                        , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
-                        , Run Memory ["-t","Mem: <usedratio>%"] 10
+                        , Run Cpu [
+							"-t", "<fn=1>\xf85a</fn>: <total>%",
+							"-L","3",
+							"-H","50",
+							"--normal","green",
+							"--high","red"
+						] 10
+                        , Run Memory ["-t","<fn=1>\xf030</fn>: <usedratio>%"] 10
                         , Run Swap [] 10
                         , Run Com "uname" ["-s","-r"] "" 36000
                         , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10

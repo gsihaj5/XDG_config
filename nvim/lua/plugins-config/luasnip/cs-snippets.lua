@@ -11,5 +11,7 @@ return {
 	--return args[1][1] .. split_filename[1]
 	--end),
 	--su.t("{}")
-	)
+	),
+	su.ls.parser.parse_snippet("wl", "Console.WriteLine($1);"),
+	su.ls.parser.parse_snippet("ofn", "public $1 $2() \n{\n$0\n}")
 }

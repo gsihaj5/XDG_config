@@ -26,6 +26,7 @@ local splitString = function(inputstr, sep)
 	return t
 end
 return {
+	ls = ls,
 	ps = ps,
 	s = s,
 	i = i,

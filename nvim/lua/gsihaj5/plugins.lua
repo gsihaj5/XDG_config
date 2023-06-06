@@ -54,6 +54,9 @@ return require('packer').startup(function()
     use {
         'terrortylor/nvim-comment'
     }
+    use {
+        'm4xshen/autoclose.nvim'
+    }
     if packer_bootstrap then
         require('packer').sync()
     end

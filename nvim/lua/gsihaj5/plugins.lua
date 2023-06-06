@@ -51,6 +51,9 @@ return require('packer').startup(function()
 			{ 'L3MON4D3/LuaSnip' }, -- Required
 		}
 	}
+    use {
+        'terrortylor/nvim-comment'
+    }
     if packer_bootstrap then
         require('packer').sync()
     end

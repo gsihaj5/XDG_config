@@ -49,7 +49,7 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
 	vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
 	vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-	vim.keymap.set("n", "<C-A-l>", function() vim.lsp.buf.format({ async = false, timeout_ms = 10000 }) end, opts)
+	vim.keymap.set("n", "<C-f>", function() vim.lsp.buf.format({ async = false, timeout_ms = 10000 }) end, opts)
 	vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 

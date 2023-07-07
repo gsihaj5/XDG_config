@@ -55,7 +55,7 @@ return require('packer').startup(function()
         'terrortylor/nvim-comment'
     }
     use {
-        'm4xshen/autoclose.nvim'
+        'windwp/nvim-ts-autotag'
     }
     if packer_bootstrap then
         require('packer').sync()

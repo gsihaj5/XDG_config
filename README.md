@@ -4,7 +4,17 @@
 ## NVIM
 to utilize this config 
 
+
 ### WINDOWS
+
+if gcc needed install scoop
+`Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # Optional: Needed to run a remote script the first time`
+
+`irm get.scoop.sh | iex`
+
+`scoop install gcc`
+
+
 1. install nvim 0.9^ from https://github.com/neovim/neovim/releases/tag/stable
 1. pull this repo
 1. create symlink from %AppData%/local/nvim <-> XDG_CONFIG/nvim

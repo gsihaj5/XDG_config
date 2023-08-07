@@ -5,6 +5,10 @@ lsp.preset("recommended")
 lsp.ensure_installed({
     'tsserver',
     'lua_ls',
+    'intelephense',
+    'csharp_ls',
+    'cssmodules_ls',
+    'cssls'
 })
 
 -- Fix Undefined global 'vim'

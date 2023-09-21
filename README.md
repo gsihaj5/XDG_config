@@ -18,6 +18,10 @@ for faster search
 
 `scoop install ripgrep`
 
+for extra font install from
+
+https://www.nerdfonts.com/font-downloads
+
 
 1. install nvim 0.9^ from https://github.com/neovim/neovim/releases/tag/stable
 1. pull this repo

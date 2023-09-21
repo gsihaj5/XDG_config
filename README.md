@@ -22,6 +22,10 @@ for extra font install from
 
 https://www.nerdfonts.com/font-downloads
 
+make sure the alacritty config at 
+
+user/AppData/Roaming/alacritty/alacritty.yml
+
 
 1. install nvim 0.9^ from https://github.com/neovim/neovim/releases/tag/stable
 1. pull this repo

@@ -14,6 +14,10 @@ if gcc needed install scoop
 
 `scoop install gcc`
 
+for faster search 
+
+`scoop install ripgrep`
+
 
 1. install nvim 0.9^ from https://github.com/neovim/neovim/releases/tag/stable
 1. pull this repo

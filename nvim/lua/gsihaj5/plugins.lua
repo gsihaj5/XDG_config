@@ -32,10 +32,12 @@ return require('packer').startup(function()
 
     -- file explorer
     use('nvim-tree/nvim-tree.lua')
-    use('nvim-tree/nvim-web-devicons')
 
     --status bar
-    use('nvim-lualine/lualine.nvim')
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
 
     use {
         'VonHeikemen/lsp-zero.nvim',

@@ -57,7 +57,7 @@ return require('packer').startup(function()
             -- Autocompletion
             { 'hrsh7th/nvim-cmp' },     -- Required
             { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-            { 'L3MON4D3/LuaSnip' },     -- Required
+            { 'L3MON4D3/LuaSnip', },    -- Required
         }
     }
     use {
@@ -66,6 +66,7 @@ return require('packer').startup(function()
     use {
         'windwp/nvim-ts-autotag'
     }
+
     if packer_bootstrap then
         require('packer').sync()
     end

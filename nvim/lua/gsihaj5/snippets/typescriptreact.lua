@@ -12,9 +12,11 @@ ls.add_snippets('typescriptreact', {
         const {}: React.FC<I{}Props> = () => {{
             return <>{}</>
         }}
+        export default {};
         ]],
         {
             i(1, "default"),
+            rep(1),
             rep(1),
             rep(1),
             rep(1),
@@ -30,8 +32,20 @@ ls.add_snippets('typescriptreact', {
         export default T{}
         ]],
         {
-            i(1, "<typename>"),
+            i(1, "<typeName>"),
             rep(1),
+        }
+    )),
+})
+
+ls.add_snippets('typescriptreact', {
+    s('ne', fmt(
+        [[
+        export enum {} {{
+        }}
+        ]],
+        {
+            i(1, "<enumName>"),
         }
     )),
 })

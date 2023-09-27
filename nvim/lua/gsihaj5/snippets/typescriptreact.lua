@@ -21,3 +21,17 @@ ls.add_snippets('typescriptreact', {
         }
     )),
 })
+
+ls.add_snippets('typescriptreact', {
+    s('nt', fmt(
+        [[
+        type T{} = {{
+        }}
+        export default T{}
+        ]],
+        {
+            i(1, "<typename>"),
+            rep(1),
+        }
+    )),
+})

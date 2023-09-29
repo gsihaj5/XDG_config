@@ -1,3 +1,6 @@
-require('nvim_comment').setup()
+require('nvim_comment').setup({
+    line_mapping = ",//",
 
-vim.keymap.set("n", ",/", vim.cmd.CommentToggle)
+    operator_mapping = ",/",
+    comment_chunk_text_object = ",g/",
+})

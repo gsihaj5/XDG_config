@@ -41,7 +41,14 @@ user/AppData/Roaming/alacritty/alacritty.yml
 1. open nvim 
 1. type `:PackerSync`
 
+### using latex on windows
+before using latex 
+1. install perl https://strawberryperl.com/
+1. install miktex https://miktex.org/download
+1. after that run the command `latexmk` on your tex directory (it will prompt latexmk installation and install it !)
 
-
-
+for pdf viewer
+1. download muPDF
+1. extract muPDF
+1. add mupdf executable to path
 

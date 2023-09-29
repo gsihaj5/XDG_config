@@ -36,7 +36,7 @@ return require('packer').startup(function()
     --status bar
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons'}
+        requires = { 'nvim-tree/nvim-web-devicons' }
     }
 
     use {
@@ -66,6 +66,7 @@ return require('packer').startup(function()
     use {
         'windwp/nvim-ts-autotag'
     }
+    use { 'lervag/vimtex' }
 
     if packer_bootstrap then
         require('packer').sync()

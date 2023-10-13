@@ -30,8 +30,15 @@ return require('packer').startup(function()
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
 
-    -- file explorer
-    use('nvim-tree/nvim-tree.lua')
+    --lsp on file explorer
+    use {
+        'antosha417/nvim-lsp-file-operations',
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-tree.lua",
+        },
+        -- after = "nvim-tree"
+    }
 
     --status bar
     use {

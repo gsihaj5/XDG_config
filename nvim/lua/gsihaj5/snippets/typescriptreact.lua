@@ -67,3 +67,16 @@ ls.add_snippets('typescriptreact', {
         }
     )),
 })
+
+-- console log with variable name
+ls.add_snippets('typescriptreact', {
+    s('cl', fmt(
+        [[
+        console.log("{}", {})
+        ]],
+        {
+            i(1, "<variable>"),
+            rep(1),
+        }
+    )),
+})

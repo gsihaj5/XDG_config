@@ -1,44 +1,44 @@
 # CONFIGURATION FOR PROGRAM LISTED IN THE MAIN DIRECTORY
 
 
-## NVIM
-to utilize this config 
+## NVIM on Windows
 
+### Prerequisite
 
-### WINDOWS
+1. install scoop (run 1 by 1)
 
-if gcc needed install scoop
+```
 `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # Optional: Needed to run a remote script the first time`
-
 `irm get.scoop.sh | iex`
-
+```
+2. install gcc -> 
 `scoop install gcc`
 
-for faster search 
-
+3. install ripgrep ->
 `scoop install ripgrep`
 
-for extra font install from
+4. install alacritty (optional install whatever u want) ->
+`scoop install alacritty`
 
-https://www.nerdfonts.com/font-downloads
+5. download font from https://www.nerdfonts.com/font-downloads
 
-make sure the alacritty config at 
+6. make sure the alacritty config at user/AppData/Roaming/alacritty/alacritty.yml
 
-user/AppData/Roaming/alacritty/alacritty.yml
+### installing nvim and utilize this repo
 
-
-1. install nvim 0.9^ from https://github.com/neovim/neovim/releases/tag/stable
+1. install nvim 0.9^ from https://github.com/neovim/neovim/releases/tag/stable or `scoop install neovim`
 1. pull this repo
-1. create symlink from %AppData%/local/nvim <-> XDG_CONFIG/nvim
-    to create symlink do 
-    
-    `mklink /D nvim <path to this clone>\nvim`
+1. create symlink from %AppData%/local/nvim to \<path to XDG_CONFIG>/nvim
 
-    while in $AppData%/local
+    while in `$AppData%/local`
+
+    to create symlink do `mklink /D nvim <path to this clone>\nvim`
+
 1. install packer
     `git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"`
 
 1. open nvim 
+
 1. type `:PackerSync`
 
 ### using latex on windows

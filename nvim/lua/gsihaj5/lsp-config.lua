@@ -1,0 +1,10 @@
+-- require('lspconfig').eslint.setup {
+--     settings = {
+--         eslint = {
+--             autoFixOnSave = true,
+--             format = {
+--                 enable = true
+--             }
+--         }
+--     }
+-- }

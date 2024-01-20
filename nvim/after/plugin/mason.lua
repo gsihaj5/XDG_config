@@ -1,3 +1,3 @@
 require("mason").setup({
-	PATH = "prepend" --
+    PATH = "prepend" --
 })

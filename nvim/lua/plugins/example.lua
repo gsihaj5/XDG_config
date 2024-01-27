@@ -19,7 +19,8 @@ return {
       colorscheme = "gruvbox",
     },
   },
-  { "akinsho/bufferline.nvim",
+  {
+    "akinsho/bufferline.nvim",
     enabled = false
   },
 
@@ -31,7 +32,7 @@ return {
   },
 
   -- disable trouble
-  { "folke/trouble.nvim", enabled = false },
+  { "folke/trouble.nvim",      enabled = false },
 
   -- add symbols-outline
   {
@@ -62,7 +63,6 @@ return {
       end,
     },
   },
-
   -- add pyright to lspconfig
   {
     "neovim/nvim-lspconfig",
@@ -84,7 +84,7 @@ return {
       init = function()
         require("lazyvim.util").lsp.on_attach(function(_, buffer)
           -- stylua: ignore
-          vim.keymap.set( "n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
+          vim.keymap.set("n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
           vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
         end)
       end,

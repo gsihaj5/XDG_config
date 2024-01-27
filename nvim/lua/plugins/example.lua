@@ -178,10 +178,6 @@ return {
   -- add jsonls and schemastore packages, and setup treesitter for json, json5 and jsonc
   { import = "lazyvim.plugins.extras.lang.json" },
 
-  {
-    'echasnovski/mini.nvim',
-    version = '*'
-  },
   -- add any tools you want to have installed below
   {
     "williamboman/mason.nvim",
@@ -197,12 +193,6 @@ return {
 
   -- Use <tab> for completion and snippets (supertab)
   -- first: disable default <tab> and <s-tab> behavior in LuaSnip
-  {
-    "L3MON4D3/LuaSnip",
-    keys = function()
-      return {}
-    end,
-  },
   -- then: setup supertab in cmp
   {
     "hrsh7th/nvim-cmp",
@@ -246,4 +236,8 @@ return {
       })
     end,
   },
+  { 'theprimeagen/harpoon' },
+  { 'mbbill/undotree' }
+
+
 }

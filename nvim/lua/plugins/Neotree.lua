@@ -3,8 +3,8 @@ return {
   enabled = true,
   opts = {
     source_selector = {
-      winbar = false,
-      statusline = false,
+      winbar = true,
+      statusline = true,
     },
   },
 }

@@ -4,3 +4,4 @@
 --
 local opt = vim.opt
 opt.winbl = 10
+opt.colorcolumn = "72"

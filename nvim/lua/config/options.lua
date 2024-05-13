@@ -5,4 +5,4 @@
 local opt = vim.opt
 opt.winbl = 10
 opt.colorcolumn = "72"
-opt.scrolloff = 12
+opt.scrolloff = 18

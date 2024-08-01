@@ -51,3 +51,7 @@ vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/the
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>")
 
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
+
+--fold
+vim.keymap.set("n", "<leader>fme", ":set foldmethod=expr<CR>")
+vim.keymap.set("n", "<leader>fmm", ":set foldmethod=marker<CR>")

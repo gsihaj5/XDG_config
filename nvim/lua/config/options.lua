@@ -6,3 +6,5 @@ local opt = vim.opt
 opt.winbl = 10
 opt.colorcolumn = "72"
 opt.scrolloff = 18
+opt.foldmethod = "marker"
+opt.foldexpr = "nvim_treesitter#foldexpr()"

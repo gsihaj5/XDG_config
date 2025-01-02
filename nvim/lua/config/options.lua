@@ -8,3 +8,4 @@ opt.colorcolumn = "72"
 opt.scrolloff = 18
 opt.foldmethod = "marker"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.shiftwidth = 4

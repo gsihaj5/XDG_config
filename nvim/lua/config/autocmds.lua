@@ -4,6 +4,11 @@
 --
 --
 --
+vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
+  pattern = { "*" },
+  command = "silent! wall",
+  nested = true,
+})
 
 require("lspconfig").jdtls.setup({
     root_dir = function(fname)

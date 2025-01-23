@@ -65,3 +65,8 @@ vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
 --fold
 vim.keymap.set("n", "<leader>fme", ":set foldmethod=expr<CR>")
 vim.keymap.set("n", "<leader>fmm", ":set foldmethod=marker<CR>")
+
+
+vim.keymap.set("n", "[c", function()
+    require("treesitter-context").go_to_context(vim.v.count1)
+end)

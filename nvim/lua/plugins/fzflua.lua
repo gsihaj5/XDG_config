@@ -56,6 +56,9 @@ return {
             },
             previewers = {
                 builtin = {
+                    syntax_limit_l = 0,
+                    syntax_limit_b = 1024*1024,
+                    limit_b = 1024*1024*5,
                     extensions = {
                         ["png"] = img_previewer,
                         ["jpg"] = img_previewer,
@@ -124,6 +127,7 @@ return {
                 },
             },
             lsp = {
+                async_or_timout = true,
                 symbols = {
                     symbol_hl = function(s)
                         return "TroubleIcon" .. s

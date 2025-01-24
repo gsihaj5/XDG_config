@@ -29,6 +29,7 @@ return {
         "williamboman/mason.nvim",
         opts = {
             ensure_installed = {
+                "intelephense",
                 "stylua",
                 "shellcheck",
                 "shfmt",

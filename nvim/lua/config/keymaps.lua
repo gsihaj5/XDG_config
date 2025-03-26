@@ -67,6 +67,8 @@ vim.keymap.set("n", "<leader>fme", ":set foldmethod=expr<CR>")
 vim.keymap.set("n", "<leader>fmm", ":set foldmethod=marker<CR>")
 
 
+--split join
+
 vim.keymap.set("n", "[c", function()
     require("treesitter-context").go_to_context(vim.v.count1)
 end)

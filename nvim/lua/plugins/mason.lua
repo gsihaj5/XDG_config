@@ -5,7 +5,7 @@ return {
       -- php
       "intelephense",
       -- typescript javascript
-      "eslint",
+      "eslint-lsp",
       "eslint_d",
       "vtsls",
       "prettier",

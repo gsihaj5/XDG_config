@@ -23,6 +23,7 @@ return {
       python = { "isort", "black" },
       lua = { "stylua" },
       typescript = { "prettierd", "prettier", stop_after_first = true },
+      tsx = { "prettierd", "prettier", stop_after_first = true },
       typescriptreact = { "prettierd", "prettier", stop_after_first = true },
       javascript = { "prettierd", "prettier", stop_after_first = true },
       javascriptreact = { "prettierd", "prettier", stop_after_first = true },

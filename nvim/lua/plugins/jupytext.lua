@@ -1,4 +1,5 @@
 return {
+  -- ipynb viewer through vim
   "GCBallesteros/jupytext.vim",
   dependencies = {
     "hkupty/iron.nvim",
@@ -6,4 +7,5 @@ return {
     "kana/vim-textobj-line",
     "GCBallesteros/vim-textobj-hydrogen",
   },
+  enabled = false,
 }

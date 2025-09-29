@@ -19,8 +19,9 @@ swipe:
       command: "xdotool key ctrl+alt+Right" # Switch to previous workspace
     down:
       # minimize all windows except active one
-      command: "xdotool key ctrl+alt+d" 
-      interval: 1
+      command: "xdotool key ctrl+alt+d && xdotool keydown alt keydown Tab keyup Tab keydown Shift keydown Tab keyup Tab keyup Shift keyup alt" 
+      interval: 2
+      threshold: 0.1
 pinch:
   in:
     command: "xdotool keydown ctrl click 4 keyup ctrl" # Zoom in
@@ -28,4 +29,4 @@ pinch:
     command: "xdotool keydown ctrl click 5 keyup ctrl" # Zoom out
 hold:
   4:
-    command: "xdotool key super" # Activity
+    command: "xdotool key super+Tab" # Activity

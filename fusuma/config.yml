@@ -1,0 +1,31 @@
+swipe:
+  3:
+    begin:
+      command: xdotool keydown Alt
+    right:
+      update:
+        command: xdotool key Tab
+        interval: 5
+    left:
+      update:
+        command: xdotool key Shift+Tab
+        interval: 5
+    end:
+      command: xdotool keyup Alt
+  4:
+    left:
+      command: "xdotool key ctrl+alt+Left" # Switch to next workspace
+    right:
+      command: "xdotool key ctrl+alt+Right" # Switch to previous workspace
+    down:
+      # minimize all windows except active one
+      command: "xdotool key ctrl+alt+d" 
+      interval: 1
+pinch:
+  in:
+    command: "xdotool keydown ctrl click 4 keyup ctrl" # Zoom in
+  out:
+    command: "xdotool keydown ctrl click 5 keyup ctrl" # Zoom out
+hold:
+  4:
+    command: "xdotool key super" # Activity

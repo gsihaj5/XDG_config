@@ -17,6 +17,9 @@ swipe:
       command: "xdotool key ctrl+alt+Left" # Switch to next workspace
     right:
       command: "xdotool key ctrl+alt+Right" # Switch to previous workspace
+    up:
+      # minimize all windows except active one
+      command: "xdotool key ctrl+alt+d" 
     down:
       # minimize all windows except active one
       command: "xdotool key ctrl+alt+d && xdotool keydown alt keydown Tab keyup Tab keydown Shift keydown Tab keyup Tab keyup Shift keyup alt" 

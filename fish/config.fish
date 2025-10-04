@@ -1,8 +1,8 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
-	if test -z "$DISPLAY" -a $XDG_VTNR = 1
-		exec startx ~/.config/X11/xinit/xinitrc -- -keeptty
-	end
+    if test -z "$DISPLAY" -a $XDG_VTNR = 1
+        exec startx ~/.config/X11/xinit/xinitrc -- -keeptty
+    end
 end
 set -g theme_display_git no
 set -g theme_display_git_dirty no
@@ -48,6 +48,5 @@ set -x LC_ALL en_US.UTF-8
 set -x LC_CTYPE en_US.UTF-8
 
 function gs
-	git status
+    git status
 end
-

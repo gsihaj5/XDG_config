@@ -1,5 +1,5 @@
 return {
-    'echasnovski/mini.splitjoin',
+    'nvim-mini/mini.splitjoin',
     config = function(_, opts)
         require('mini.splitjoin').setup({
             mappings = {

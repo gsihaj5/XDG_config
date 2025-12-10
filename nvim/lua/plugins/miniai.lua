@@ -1,1 +1,1 @@
-return { "echasnovski/mini.ai", enabled = false }
+return { "nvim-mini/mini.ai", enabled = false }

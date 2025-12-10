@@ -1,5 +1,5 @@
 return {
-  "echasnovski/mini.comment",
+  "nvim-mini/mini.comment",
   config = function()
     require("mini.comment").setup({
       mappings = {

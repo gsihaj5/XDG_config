@@ -17,10 +17,10 @@ vim.keymap.set("n", "k", "gk")
 vim.keymap.set("n", "<leader>ww", ":set wrap!<CR>")
 
 vim.keymap.set("n", "<leader>vwm", function()
-    require("vim-with-me").StartVimWithMe()
+  require("vim-with-me").StartVimWithMe()
 end)
 vim.keymap.set("n", "<leader>svwm", function()
-    require("vim-with-me").StopVimWithMe()
+  require("vim-with-me").StopVimWithMe()
 end)
 
 -- greatest remap ever
@@ -37,19 +37,6 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
--- vim.keymap.set("n", "<C-l>", function()
---     local clientname = ""
---     vim.lsp.buf.format({
---         filter = function(client)
---             clientname = client.name
---             return client.name ~= "tsserver"
---         end,
---     })
---     print("formating using", clientname)
--- end)
-
--- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
--- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
@@ -66,9 +53,8 @@ vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
 vim.keymap.set("n", "<leader>fme", ":set foldmethod=expr<CR>")
 vim.keymap.set("n", "<leader>fmm", ":set foldmethod=marker<CR>")
 
-
 --split join
 --
 vim.keymap.set("n", "[c", function()
-    require("treesitter-context").go_to_context(vim.v.count1)
+  require("treesitter-context").go_to_context(vim.v.count1)
 end)

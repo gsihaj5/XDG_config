@@ -4,6 +4,9 @@ return {
         "jose-elias-alvarez/typescript.nvim",
         init = function()
             require("snacks.util").lsp.on(function(_, buffer)
+                if type(buffer) ~= "number" then
+                    return
+                end
                 -- stylua: ignore
                 vim.keymap.set("n", "<leader>co", "TypescriptOrganizeImports",
                     { buffer = buffer, desc = "Organize Imports" })

@@ -12,6 +12,7 @@ if xrandr | grep -q "HDMI-2 connected"; then
     exec $SCRIPT_DIR/tracking_system_ss_ws.sh $FE_DIR $BE_DIR $NOTE_DIR
 else
     echo "only eDP1"
+    exec $SCRIPT_DIR/tracking_system_multi_workspace.sh $FE_DIR $BE_DIR $NOTE_DIR
 fi
 
 exit

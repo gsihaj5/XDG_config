@@ -94,9 +94,15 @@ return {
     end
 
     vim.api.nvim_create_autocmd("FileType", {
+
       group = vim.api.nvim_create_augroup("lazyvim_treesitter", { clear = true }),
       callback = function(ev)
         local ft, lang = ev.match, vim.treesitter.language.get_lang(ev.match)
+
+        if ft == "markdown" then
+          vim.opt_local.spell = false
+        end
+
         if not LazyVim.treesitter.have(ft) then
           return
         end

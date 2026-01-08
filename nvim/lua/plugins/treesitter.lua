@@ -99,7 +99,7 @@ return {
         require("nvim-treesitter.parsers").dbml = {
           install_info = {
             url = "https://github.com/gsihaj5/tree-sitter-dbml",
-            revision = "fce7d428f08c5133a00859f67c490bab43237883", -- commit hash for revision to check out; HEAD if missing
+            revision = "40fe0699234f6493a4c40e9831c5e371237a5c30", -- commit hash for revision to check out; HEAD if missing
             -- optional entries:
             generate = false, -- only needed if repo does not contain pre-generated `src/parser.c`
             queries = "queries", -- also install queries from given directory

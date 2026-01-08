@@ -11,3 +11,8 @@ opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.shiftwidth = 4
 
 vim.g.autoformat = false
+vim.filetype.add({
+  extension = {
+    dbml = "dbml",
+  },
+})

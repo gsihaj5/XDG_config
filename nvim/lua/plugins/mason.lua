@@ -5,11 +5,11 @@ return {
       -- php
       "intelephense",
       -- typescript javascript
+      "typescript-language-server",
       "eslint-lsp",
       "eslint_d",
-      "vtsls",
       "prettier",
-      "vtsls",
+      -- "vtsls",
 
       -- opther language
       "stylua",

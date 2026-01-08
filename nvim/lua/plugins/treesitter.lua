@@ -93,6 +93,22 @@ return {
       end)
     end
 
+    vim.api.nvim_create_autocmd("User", {
+      pattern = "TSUpdate",
+      callback = function()
+        require("nvim-treesitter.parsers").dbml = {
+          install_info = {
+            url = "https://github.com/gsihaj5/tree-sitter-dbml",
+            revision = "fce7d428f08c5133a00859f67c490bab43237883", -- commit hash for revision to check out; HEAD if missing
+            -- optional entries:
+            generate = false, -- only needed if repo does not contain pre-generated `src/parser.c`
+            queries = "queries", -- also install queries from given directory
+          },
+          tier = 2,
+        }
+      end,
+    })
+
     vim.api.nvim_create_autocmd("FileType", {
 
       group = vim.api.nvim_create_augroup("lazyvim_treesitter", { clear = true }),

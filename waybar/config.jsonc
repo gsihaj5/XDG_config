@@ -32,12 +32,9 @@
     "tooltip": false
   },
   "clock": {
-    "timezone": "Asia/Jakarta",
-    "format": "{:%I:%M  %d, %m}",
-    "tooltip-format": "{calendar}",
-    "calendar": {
-      "mode": "month"
-    }
+      "interval": 60,
+    "timezone":"Europe/London",
+      "format": "{:%Y-%m-%d %H:%M:%S}"
   },
   "cpu": {
     "format": "{usage}% ",

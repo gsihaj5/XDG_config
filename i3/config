@@ -9,7 +9,8 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+# set $mod Mod1
+set $mod Mod4
 
 # exec --no-startup-id sleep 2 && xrandr --output eDP-1 --mode 1366x768 --primary --output HDMI-2 --mode 1920x1080 --pos 1366x0
 exec_always --no-startup-id autorandr --change

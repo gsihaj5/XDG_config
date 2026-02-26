@@ -35,7 +35,7 @@ size = 11
 normal.family = "JetBrainsMono Nerd Font"
 
 [window]
-opacity = 1
+opacity = 0.8
 startup_mode="Maximized"
 
 [window.padding]

@@ -8,6 +8,12 @@ return {
         return ""
       end,
     },
+    condition = function(buf)
+      if vim.bo[buf].filetype == "harpoon" then
+        return false
+      end
+      return true
+    end,
   },
   keys = {
     { "<leader>uv", "<cmd>ASToggle<CR>", desc = "Toggle autosave" },

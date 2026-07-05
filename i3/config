@@ -9,7 +9,8 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+# set $mod Mod1
+set $mod Mod4
 
 # exec --no-startup-id sleep 2 && xrandr --output eDP-1 --mode 1366x768 --primary --output HDMI-2 --mode 1920x1080 --pos 1366x0
 exec_always --no-startup-id autorandr --change
@@ -47,6 +48,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+
+exec --no-startup-id blueman-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status

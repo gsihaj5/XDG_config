@@ -34,13 +34,12 @@ sleep $SLEEP_DUR
 i3-msg "focus up"
 i3-msg "split h"
 
-i3-msg "exec --no-startup-id ~/.config/i3/workspaces/scripts/open_nvim.sh "NOTE" \"$NOTE_DIR\""
-
-#open note
-sleep $SLEEP_DUR
-
-i3-msg "focus left"
-i3-msg "split v"
+# i3-msg "exec --no-startup-id ~/.config/i3/workspaces/scripts/open_nvim.sh "NOTE" \"$NOTE_DIR\""
+# #open note
+# sleep $SLEEP_DUR
+#
+# i3-msg "focus left"
+# i3-msg "split v"
 
 i3-msg "exec --no-startup-id ~/.config/i3/workspaces/scripts/open_nvim.sh "BE-nvim" \"$BE_DIR\""
 

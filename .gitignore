@@ -3,6 +3,7 @@ oh-my-zsh
 
 !X11/
 !alacritty/
+!hypr/
 !fish/
 !nvim/
 !ranger/

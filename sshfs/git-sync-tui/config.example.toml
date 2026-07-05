@@ -1,0 +1,27 @@
+[mount]
+default_mount_point = "/mnt/remote"
+default_connect_script = "~/XDG_config/sshfs/connect-laptop.sh"
+
+[[mount.alternatives]]
+label = "Laptop"
+mount_point = "/mnt/remote"
+connect_script = "~/XDG_config/sshfs/connect-laptop.sh"
+
+# [[mount.alternatives]]
+# label = "Other machine"
+# mount_point = "/mnt/other"
+# connect_script = "~/scripts/connect-other.sh"
+
+[[roots]]
+local = "~/projects"
+remote_mount_suffix = "projects"
+
+[[roots]]
+local = "~/XDG_config"
+remote_mount_suffix = "XDG_config"
+
+[cursor]
+enabled = true
+cursaves_bin = "cursaves"
+require_quit_for_import = true
+push_when_cursor_open = true

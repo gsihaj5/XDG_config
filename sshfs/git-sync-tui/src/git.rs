@@ -130,6 +130,8 @@ pub fn classify_pair(
     scanned: &ScannedRepo,
     remote_mounted: bool,
     cursor_config: &CursorConfig,
+    fetch_cursor: bool,
+    cache: &mut cursor::CursorCache,
 ) -> Result<RepoPairState> {
     let local = scanned
         .local
@@ -148,7 +150,13 @@ pub fn classify_pair(
 
     let (status, newest, oldest) = compute_status(local.as_ref(), remote.as_ref(), remote_mounted);
 
-    let cursor_status = local.as_ref().map(|l| cursor::fetch_status(cursor_config, &l.path));
+    let cursor_status = if fetch_cursor {
+        local
+            .as_ref()
+            .map(|l| cursor::fetch_status(cursor_config, &l.path, cache))
+    } else {
+        None
+    };
 
     Ok(RepoPairState {
         relative_path: scanned.relative_path.clone(),

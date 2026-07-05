@@ -39,6 +39,14 @@ cargo build --release
 ./target/release/git-sync-tui
 ```
 
+## Performance
+
+Startup only scans **local** repo paths (no git, no cursaves). Remote paths are derived from the mount prefix without walking sshfs.
+
+Git status and cursaves info load **in the background** for the selected repo. The detail panel shows a spinner while loading; the list stays responsive when you change selection.
+
+**Remote projects root:** use **Pick remote dir** under the mount bar to choose which folder under the mount maps to local `~/projects`. The choice is saved per mount in `~/.config/git-sync-tui/state.toml`.
+
 ## Sync behavior
 
 On **Enter** (confirm sync):

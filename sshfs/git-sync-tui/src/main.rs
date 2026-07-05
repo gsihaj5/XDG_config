@@ -1,9 +1,11 @@
 mod config;
 mod cursor;
+mod detail_loader;
 mod git;
 mod model;
 mod mount;
 mod scanner;
+mod state;
 mod ui;
 
 use std::io::stdout;
@@ -62,9 +64,11 @@ fn run_tui(app: &mut App) -> Result<()> {
     let mut terminal = Terminal::new(backend)?;
 
     loop {
+        app.poll_detail_load();
+        app.tick_spinner();
         terminal.draw(|f| ui::draw(f, app))?;
 
-        if event::poll(Duration::from_millis(100))? {
+        if event::poll(Duration::from_millis(50))? {
             match event::read()? {
                 Event::Key(key) => {
                     if key.kind != KeyEventKind::Press {
@@ -112,7 +116,11 @@ fn handle_key(app: &mut App, code: KeyCode, modifiers: KeyModifiers) -> bool {
             }
         }
         Modal::MountPicker => {
-            // mount picker is click-only; Esc closes
+            if code == KeyCode::Esc {
+                app.modal = Modal::None;
+            }
+        }
+        Modal::RemoteRootPicker => {
             if code == KeyCode::Esc {
                 app.modal = Modal::None;
             }

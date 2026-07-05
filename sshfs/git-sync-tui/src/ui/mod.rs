@@ -14,7 +14,7 @@ pub fn draw(frame: &mut Frame, app: &mut App) {
     let chunks = Layout::default()
         .direction(Direction::Vertical)
         .constraints([
-            Constraint::Length(3),
+            Constraint::Length(5),
             Constraint::Min(5),
             Constraint::Length(1),
         ])
@@ -34,6 +34,7 @@ pub fn draw(frame: &mut Frame, app: &mut App) {
 
     match app.modal {
         crate::model::Modal::MountPicker => modal::draw_mount_picker(frame, app),
+        crate::model::Modal::RemoteRootPicker => modal::draw_remote_root_picker(frame, app),
         crate::model::Modal::SyncConfirm => modal::draw_sync_confirm(frame, app),
         crate::model::Modal::Result => modal::draw_result(frame, app),
         crate::model::Modal::None => {}
@@ -44,7 +45,7 @@ fn draw_footer(frame: &mut Frame, area: Rect) {
     use ratatui::style::{Color, Style};
     use ratatui::widgets::Paragraph;
 
-    let text = "Click repo to select · Enter: sync · r: refresh · q: quit · Mount: click buttons only";
+    let text = "Click repo · Enter: sync · r: refresh list+detail · q: quit · status loads per selection";
     let p = Paragraph::new(text).style(Style::default().fg(Color::DarkGray));
     frame.render_widget(p, area);
 }

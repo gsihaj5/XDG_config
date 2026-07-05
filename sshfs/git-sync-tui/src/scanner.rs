@@ -51,6 +51,8 @@ pub struct ScannedRepo {
     pub relative_path: String,
     pub local: Option<PathBuf>,
     pub remote: Option<PathBuf>,
+    /// Path checked on the remote for this repo (`remote_root/relative_path`).
+    pub remote_checked: Option<PathBuf>,
 }
 
 pub fn pair_repos(
@@ -62,29 +64,35 @@ pub fn pair_repos(
 
     for (local_root, remote_root) in remote_roots {
         for (rel, path) in discover_repos(local_root) {
-            map.entry(rel.clone())
-                .or_insert_with(|| ScannedRepo {
-                    relative_path: rel,
-                    local: None,
-                    remote: None,
-                })
-                .local = Some(path);
-        }
+            let remote_checked = if remote_available {
+                Some(remote_root.join(&rel))
+            } else {
+                None
+            };
 
-        if remote_available {
-            for (rel, path) in discover_repos(remote_root) {
-                map.entry(rel.clone())
-                    .or_insert_with(|| ScannedRepo {
-                        relative_path: rel,
-                        local: None,
-                        remote: None,
-                    })
-                    .remote = Some(path);
+            let remote = remote_checked.as_ref().and_then(|remote_path| {
+                if remote_path.join(".git").exists() {
+                    Some(remote_path.clone())
+                } else {
+                    None
+                }
+            });
+
+            let entry = map.entry(rel.clone()).or_insert_with(|| ScannedRepo {
+                relative_path: rel.clone(),
+                local: None,
+                remote: None,
+                remote_checked: None,
+            });
+            entry.local = Some(path);
+            entry.remote_checked = remote_checked;
+            if let Some(rp) = remote {
+                entry.remote = Some(rp);
             }
         }
     }
 
-    let _ = roots; // roots used via remote_roots construction in caller
+    let _ = roots;
 
     let mut repos: Vec<_> = map.into_values().collect();
     repos.sort_by(|a, b| a.relative_path.cmp(&b.relative_path));

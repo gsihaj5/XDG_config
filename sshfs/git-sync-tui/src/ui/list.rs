@@ -16,12 +16,12 @@ pub fn draw(frame: &mut Frame, app: &mut App, area: Rect) {
 
     let visible_height = inner.height as usize;
     let items: Vec<ListItem> = app
-        .repos
+        .entries
         .iter()
         .enumerate()
-        .map(|(i, repo)| {
-            let icon = repo.status.icon();
-            let line = format!(" {} {}", icon, repo.relative_path);
+        .map(|(i, entry)| {
+            let icon = app.list_icon(i);
+            let line = format!(" {} {}", icon, entry.relative_path);
             let style = if i == app.selected {
                 Style::default()
                     .bg(Color::DarkGray)
@@ -41,7 +41,7 @@ pub fn draw(frame: &mut Frame, app: &mut App, area: Rect) {
     frame.render_stateful_widget(list, list_area, &mut state);
 
     // Register click zones for visible rows
-    for (vis, repo_idx) in (app.list_scroll..app.repos.len())
+    for (vis, repo_idx) in (app.list_scroll..app.entries.len())
         .take(visible_height)
         .enumerate()
     {

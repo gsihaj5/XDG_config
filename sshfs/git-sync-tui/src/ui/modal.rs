@@ -74,6 +74,67 @@ pub fn draw_mount_picker(frame: &mut Frame, app: &mut App) {
     app.register_click(cancel_rect, ClickAction::MountPickerCancel);
 }
 
+pub fn draw_remote_root_picker(frame: &mut Frame, app: &mut App) {
+    let choice_count = app.remote_root_choices.len();
+    let height = (choice_count + 5).min(20) as u16;
+    let area = centered_rect(58, height, frame.area());
+    frame.render_widget(Clear, area);
+
+    let mount = app.active_mount.mount_point.display().to_string();
+    let block = Block::default()
+        .borders(Borders::ALL)
+        .title(format!(" Remote projects folder under {mount} "))
+        .title_alignment(Alignment::Center)
+        .title_style(Style::default().add_modifier(Modifier::BOLD));
+
+    let inner = block.inner(area);
+    frame.render_widget(block, area);
+
+    let mut lines = vec![
+        "Choose which directory on the mount corresponds to local ~/projects:".to_string(),
+        String::new(),
+    ];
+
+    for (i, (name, path)) in app.remote_root_choices.iter().enumerate() {
+        let marker = if name == &app.remote_projects_suffix {
+            ">"
+        } else {
+            " "
+        };
+        lines.push(format!("{marker} {:<20} {}", name, path.display()));
+        let _ = i;
+    }
+
+    lines.push(String::new());
+    lines.push("Click a row to select · [ Cancel ]".to_string());
+
+    let text = lines.join("\n");
+    frame.render_widget(Paragraph::new(text).style(Style::default()), inner);
+
+    for i in 0..choice_count {
+        let row_rect = Rect {
+            x: inner.x,
+            y: inner.y + 2 + i as u16,
+            width: inner.width,
+            height: 1,
+        };
+        app.register_click(row_rect, ClickAction::RemoteRootPickerRow(i));
+    }
+
+    let cancel_y = inner.y + 2 + choice_count as u16 + 1;
+    let cancel_rect = Rect {
+        x: inner.x + inner.width.saturating_sub(12),
+        y: cancel_y,
+        width: 10,
+        height: 1,
+    };
+    frame.render_widget(
+        Paragraph::new(" Cancel ").style(Style::default().fg(Color::Black).bg(Color::Red)),
+        cancel_rect,
+    );
+    app.register_click(cancel_rect, ClickAction::RemoteRootPickerCancel);
+}
+
 pub fn draw_sync_confirm(frame: &mut Frame, app: &mut App) {
     let area = centered_rect(60, 22, frame.area());
     frame.render_widget(Clear, area);
@@ -134,7 +195,7 @@ pub fn draw_sync_confirm(frame: &mut Frame, app: &mut App) {
     lines.push(String::new());
     lines.push("Cursor chats:".to_string());
     if app.config.cursor.enabled {
-        let cursor_open = crate::cursor::is_cursor_running() || crate::cursor::is_db_busy();
+        let cursor_open = app.cursor_cache.cursor_running() || app.cursor_cache.db_busy();
         if cursor_open && app.config.cursor.require_quit_for_import {
             lines.push("  ● Cursor running — import skipped (export only)".to_string());
         } else {

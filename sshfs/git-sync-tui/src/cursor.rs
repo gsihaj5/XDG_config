@@ -165,11 +165,56 @@ pub fn cursaves_available(config: &CursorConfig) -> bool {
         .unwrap_or(false)
 }
 
-pub fn fetch_status(config: &CursorConfig, project_path: &Path) -> CursorChatStatus {
+#[derive(Debug, Clone, Default)]
+pub struct CursorCache {
+    pub cursaves_available: Option<bool>,
+    pub cursor_running: Option<bool>,
+    pub db_busy: Option<bool>,
+}
+
+impl CursorCache {
+    pub fn cursaves_available(&mut self, config: &CursorConfig) -> bool {
+        if let Some(v) = self.cursaves_available {
+            return v;
+        }
+        let v = cursaves_available(config);
+        self.cursaves_available = Some(v);
+        v
+    }
+
+    pub fn cursor_running(&mut self) -> bool {
+        if let Some(v) = self.cursor_running {
+            return v;
+        }
+        let v = is_cursor_running();
+        self.cursor_running = Some(v);
+        v
+    }
+
+    pub fn db_busy(&mut self) -> bool {
+        if let Some(v) = self.db_busy {
+            return v;
+        }
+        let v = is_db_busy();
+        self.db_busy = Some(v);
+        v
+    }
+
+    pub fn invalidate_runtime(&mut self) {
+        self.cursor_running = None;
+        self.db_busy = None;
+    }
+}
+
+pub fn fetch_status(
+    config: &CursorConfig,
+    project_path: &Path,
+    cache: &mut CursorCache,
+) -> CursorChatStatus {
     let mut status = CursorChatStatus {
-        available: cursaves_available(config),
-        cursor_running: is_cursor_running(),
-        db_busy: is_db_busy(),
+        available: cache.cursaves_available(config),
+        cursor_running: cache.cursor_running(),
+        db_busy: cache.db_busy(),
         ..Default::default()
     };
 

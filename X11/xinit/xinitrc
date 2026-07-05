@@ -65,5 +65,6 @@ setxkbmap -option caps:escape
 
 
 #load execute WM
-exec xmonad
+exec i3
+#exec xmonad
 #exec xfwm4 

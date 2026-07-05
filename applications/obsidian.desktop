@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Obsidian
+Comment=Markdown knowledge base
+Exec=/home/gerry/tools/obsidian.AppImage --no-sandbox %U
+Terminal=false
+Type=Application
+Icon=obsidian
+StartupWMClass=obsidian
+Categories=Office;

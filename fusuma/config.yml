@@ -14,9 +14,9 @@ swipe:
       command: xdotool keyup Alt
   4:
     left:
-      command: "xdotool key ctrl+alt+Left" # Switch to next workspace
+      command: "i3-msg workspace prev"
     right:
-      command: "xdotool key ctrl+alt+Right" # Switch to previous workspace
+      command: "i3-msg workspace next"
     up:
       # minimize all windows except active one
       command: "xdotool key ctrl+alt+d" 

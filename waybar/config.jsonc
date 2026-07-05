@@ -18,12 +18,13 @@
     "hyprland/workspaces"
   ],
   "modules-right": [
-    "wlr/taskbar",
+    // "wlr/taskbar",
     "idle_inhibitor",
     "pulseaudio/slider",
     "pulseaudio",
     "network",
-    "hyprland/language"
+    "hyprland/language",
+    "bluetooth"
   ],
   /* === Modules Left === */
   "custom/archicon": {
@@ -33,7 +34,7 @@
   },
   "clock": {
       "interval": 60,
-    "timezone":"Europe/London",
+    "timezone":"Asia/Jakarta",
       "format": "{:%Y-%m-%d %H:%M:%S}"
   },
   "cpu": {
@@ -53,13 +54,25 @@
   },
   /* === Modules Center === */
   "hyprland/workspaces": {
-    "format": "{icon}",
+    "format": "{name} {icon}",
     "format-icons": {
-      "default": "",
-      "active": ""
-    },
+    "1": " |",
+    "2": " |",
+    "3": "󰖟 |",
+    "4": "󰣆 |",
+    "5": "󰣆 |",
+    "6": "󰣆 |",
+
+    "7": "󰙯 |",   // Discord
+    "8": "󰓓 |",   // Steam
+    "9": "󰎆 |",   // Spotify
+    "10": "🎮",   // Programs / misc
+
+    "urgent": "",
+    "focused": "",
+    "default": ""    },
     "persistent-workspaces": {
-      "*": 2
+      "*": [1,2,3,4,5,6,7,8,9,10],
     },
     "disable-scroll": true,
     "all-outputs": true,
@@ -98,7 +111,8 @@
         "",
         ""
       ]
-    }
+    },
+    "on-click": "pavucontrol",
   },
   "network": {
     "format": "{ifname}",
@@ -107,7 +121,7 @@
     "tooltip-format": " {ifname} via {gwaddr}",
     "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr}",
     "tooltip-format-disconnected": "Disconnected",
-    "max-length": 50
+    "max-length": 50,
   },
   "hyprland/language": {
     "format": "{} ",

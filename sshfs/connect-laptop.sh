@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sshfs remotelaptop:/home/gerry/projects /mnt/remote/
+sshfs remotelaptop:/home/gerry /mnt/remote/

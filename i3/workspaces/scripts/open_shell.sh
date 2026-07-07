@@ -1,10 +1,9 @@
 #!/bin/bash
 
-FE_DIR="$1"
-TITLE="${2:-FE NPM}"
+PRO_DIR="$1"
+TITLE="${2:-Shell}"
 
 alacritty --title "$TITLE" -e zsh -lic "
-cd $FE_DIR
-npm run dev
+cd $PRO_DIR
 zsh
 "

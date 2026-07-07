@@ -1,0 +1,46 @@
+@font-face {
+    font-family: "WorkspaceIcons";
+    src: url("WorkspaceIcons.ttf?1ac94242ceaa455cabfea658f5fac6d2") format("truetype");
+}
+
+i[class^=".-"]:before, i[class*=" .-"]:before {
+    font-family: WorkspaceIcons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+..-ws01-terminal:before {
+    content: "\f101";
+}
+..-ws02-terminal:before {
+    content: "\f102";
+}
+..-ws03-browser:before {
+    content: "\f103";
+}
+..-ws04-cursor:before {
+    content: "\f104";
+}
+..-ws05:before {
+    content: "\f105";
+}
+..-ws06:before {
+    content: "\f106";
+}
+..-ws07:before {
+    content: "\f107";
+}
+..-ws08:before {
+    content: "\f108";
+}
+..-ws09:before {
+    content: "\f109";
+}
+..-ws10:before {
+    content: "\f10a";
+}

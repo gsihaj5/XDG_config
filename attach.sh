@@ -6,6 +6,8 @@ ln -s ~/XDG_config/fusuma/ ~/.config/fusuma
 ln -s ~/XDG_config/X11/ ~/.config/X11
 ln -s ~/XDG_config/nvim/ ~/.config/nvim
 ln -s ~/XDG_config/rofi/ ~/.config/rofi
+ln -s ~/XDG_config/polybar/ ~/.config/polybar
+ln -s ~/XDG_config/picom/ ~/.config/picom
 ln -s ~/XDG_config/waybar/ ~/.config/waybar
 ln -s ~/XDG_config/waypaper/ ~/.config/waypaper
 

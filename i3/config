@@ -65,11 +65,15 @@ for_window [class="Blueman-sendto"] floating enable
 for_window [class="Arandr"] floating enable, move position center
 
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+set $refresh_polybar $HOME/.local/bin/polybar-msg cmd update
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_polybar
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_polybar
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_polybar
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_polybar
+
+# Screenshot → clipboard (no file saved)
+bindsym Print exec --no-startup-id sh -c 'maim | xclip -selection clipboard -t image/png && notify-send "Screenshot" "Full screen copied to clipboard"'
+bindsym Shift+Print exec --no-startup-id sh -c 'maim -s | xclip -selection clipboard -t image/png && notify-send "Screenshot" "Selection copied to clipboard"'
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -87,6 +91,9 @@ bindsym $mod+Shift+q kill
 
 # start rofi (application launcher)
 bindsym $mod+d exec --no-startup-id rofi -show drun
+
+# file manager
+bindsym $mod+e exec --no-startup-id thunar
 
 # system settings GUIs
 bindsym $mod+Shift+n exec --no-startup-id nm-connection-editor
@@ -122,7 +129,7 @@ bindsym $mod+Shift+Right move right
 #
 
 # split in vertical orientation
-bindsym $mod+v split v
+# bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -130,7 +137,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+v layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -156,6 +163,9 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+
+# Ensure all 10 workspaces exist so polybar can show them
+exec --no-startup-id sh -c 'for i in 1 2 3 4 5 6 7 8 9 10; do i3-msg workspace number $i >/dev/null; done; i3-msg workspace number 1'
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -217,25 +227,28 @@ bindsym $mod+r mode "resize"
 
 
 gaps inner 10px
+gaps top 34px
+
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-        tray_output primary
-        colors {
-        # bar background color
-        background $bg
-        # text color used for blocks that do not have a color specified.
-        statusline $yellow
-        # workspaces section            
-        #                    border  backgr. text
-        focused_workspace    $aqua $aqua $darkgray
-        inactive_workspace   $darkgray $darkgray $yellow
-        active_workspace     $darkgray $darkgray $yellow
-        urgent_workspace     $red $red $bg
-    }
-}
+# bar {
+#         status_command i3status
+#         tray_output primary
+#         colors {
+#         # bar background color
+#         background $bg
+#         # text color used for blocks that do not have a color specified.
+#         statusline $yellow
+#         # workspaces section
+#         #                    border  backgr. text
+#         focused_workspace    $aqua $aqua $darkgray
+#         inactive_workspace   $darkgray $darkgray $yellow
+#         active_workspace     $darkgray $darkgray $yellow
+#         urgent_workspace     $red $red $bg
+#     }
+# }
 
 # class                 border|backgr|text|indicator|child_border
 client.focused          $green $green $darkgray $purple $darkgray

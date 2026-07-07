@@ -53,10 +53,10 @@ xset r rate 200 25
 
 #change background image
 #feh --bg-fill <path to image>
-feh --bg-fill ~/wallpaper/city.jpg
+feh --bg-fill ~/XDG_config/wallpapers/anime/totoro_bus_stand.png
 
 #load compositor
-picom &
+picom --config ~/.config/picom/picom.conf -b
 
 #execute xmobar for status bar
 #xmobar ~/.config/xmobar/xmobarrc &

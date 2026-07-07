@@ -37,9 +37,9 @@ monitor_width() {
 set_bar_geometry() {
   local width="$1"
   local margin=4
-  local left_w=350
+  local left_w=400
   local center_w=350
-  local right_w=350
+  local right_w=320
 
   export LEFT_BAR_OFFSET=$margin
   export LEFT_BAR_WIDTH=$left_w

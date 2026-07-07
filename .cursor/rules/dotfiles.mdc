@@ -1,0 +1,27 @@
+---
+description: XDG_config dotfiles layout and conventions
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+# XDG_config
+
+Personal dotfiles repo synced between laptop and PC via git (+ sshfs/git-sync-tui).
+
+## Layout
+
+- `hypr/`, `waybar/`, `nvim/`, `alacritty/` — symlinked into `~/.config/` via `attach.sh`
+- `sshfs/` — laptop mount (`connect-laptop.sh`) and `git-sync-tui` for cross-machine repo sync
+- `sshfs/git-sync-tui/` — Rust TUI: git push/pull + Cursor chat sync via cursaves
+
+## Cross-machine workflow
+
+- Code: git remotes per project; use `git-sync-tui` when comparing local vs `/mnt/remote/...`
+- Cursor chats: synced with `cursaves` (private `~/.cursaves` git remote), not project git
+- Quit Cursor before importing chats on the other machine; restart Cursor after import
+
+## Editing
+
+- Keep changes minimal and match existing style in each config subtree
+- Do not commit secrets, tokens, or machine-specific paths unless already present as examples

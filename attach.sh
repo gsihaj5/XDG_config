@@ -4,6 +4,7 @@ ln -s ~/XDG_config/alacritty/ ~/.config/alacritty
 ln -s ~/XDG_config/i3/ ~/.config/i3
 ln -s ~/XDG_config/fusuma/ ~/.config/fusuma
 ln -s ~/XDG_config/X11/ ~/.config/X11
+ln -s ~/XDG_config/hypr/ ~/.config/hypr
 ln -s ~/XDG_config/nvim/ ~/.config/nvim
 ln -s ~/XDG_config/rofi/ ~/.config/rofi
 ln -s ~/XDG_config/polybar/ ~/.config/polybar

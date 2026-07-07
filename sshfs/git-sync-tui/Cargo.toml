@@ -1,0 +1,18 @@
+[package]
+name = "git-sync-tui"
+version = "0.1.0"
+edition = "2021"
+description = "TUI to compare and sync git repos across local and SSHFS-mounted machines"
+
+[[bin]]
+name = "git-sync-tui"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+chrono = "0.4"
+clap = { version = "4", features = ["derive"] }
+crossterm = "0.28"
+ratatui = "0.29"
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"

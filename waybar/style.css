@@ -46,6 +46,73 @@ window#waybar.hidden {
   opacity: 0.2;
 }
 
+/* === Vertical monitor top bar (HDMI-A-1) === */
+#custom-archicon-vertical,
+#clock-vertical,
+#workspaces-vertical,
+#idle_inhibitor-vertical,
+#pulseaudio-slider-vertical,
+#pulseaudio-vertical,
+#network-vertical,
+#language-vertical {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 13px;
+}
+
+#custom-archicon-vertical {
+  font-size: 16px;
+  margin-left: 5px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+#clock-vertical {
+  background: @aqua;
+  color: @bg;
+}
+
+#workspaces-vertical {
+  margin: 4px 5px;
+  padding: 0 4px;
+}
+
+#workspaces-vertical button {
+  padding: 2px 6px;
+  font-size: 14px;
+}
+
+#idle_inhibitor-vertical {
+  background: @blue;
+  padding-right: 15px;
+}
+
+#pulseaudio-slider-vertical {
+  color: @orange;
+  background: @purple-dim;
+  min-width: 80px;
+}
+
+#pulseaudio-vertical {
+  min-width: 55px;
+  background: @purple;
+}
+
+#network-vertical {
+  background: @orange;
+  padding-right: 13px;
+}
+
+#language-vertical {
+  background: @aqua;
+  padding-right: 15px;
+  margin-right: 5px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
 /* - Genera rules for visible modules -- */
 #custom-archicon,
 #clock,

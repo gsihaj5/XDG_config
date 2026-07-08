@@ -38,6 +38,8 @@ set $darkgray #1d2021
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+exec --no-startup-id feh --bg-fill ~/XDG_config/wallpapers/anime/totoro_bus_stand.png
+
 exec --no-startup-id fusuma
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so

@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Slick Greeter (Polybar)
+Comment=LightDM greeter with polybar top bars
+Exec=/usr/local/bin/lightdm-greeter-with-polybar
+Type=Application

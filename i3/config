@@ -29,6 +29,7 @@ set $purple #b16286
 set $aqua #689d68
 set $gray #a89984
 set $darkgray #1d2021
+set $white #fbf1c7
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -45,9 +46,10 @@ exec --no-startup-id fusuma
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# light-locker shows the LightDM greeter on idle/suspend (same look as login).
+# Manual lock: $mod+Control+l or `light-locker-command -l`
+exec --no-startup-id light-locker --lock-on-suspend
+bindsym $mod+Control+l exec --no-startup-id light-locker-command -l
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -168,6 +170,7 @@ set $ws10 "10"
 
 # Ensure all 10 workspaces exist so polybar can show them
 exec --no-startup-id sh -c 'for i in 1 2 3 4 5 6 7 8 9 10; do i3-msg workspace number $i >/dev/null; done; i3-msg workspace number 1'
+exec --no-startup-id ~/.config/i3/workspaces/mint_startup.sh
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1

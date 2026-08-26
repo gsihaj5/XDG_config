@@ -79,3 +79,6 @@ else
     launch_bars "$m"
   done
 fi
+
+# Hide bars while a client is fullscreen (i3 override-redirect bars stay on top otherwise).
+"$HOME/.config/polybar/autohide-fullscreen.sh" &

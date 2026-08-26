@@ -9,9 +9,15 @@ alwaysApply: true
 
 Personal dotfiles repo synced between laptop and PC via git (+ sshfs/git-sync-tui).
 
+## Machines
+
+- **This PC** — Linux Mint + i3 + X11 + polybar (see `linux-mint-i3` rule)
+- **Laptop** — Hyprland + Waybar (remote via `sshfs/connect-laptop.sh`)
+
 ## Layout
 
-- `hypr/`, `waybar/`, `nvim/`, `alacritty/` — symlinked into `~/.config/` via `attach.sh`
+- `i3/`, `polybar/`, `picom/`, `rofi/`, `nvim/`, `alacritty/` — symlinked into `~/.config/` via `attach.sh` (this PC)
+- `hypr/`, `waybar/` — laptop (Hyprland); also linked by `attach.sh` but not the local runtime target
 - `sshfs/` — laptop mount (`connect-laptop.sh`) and `git-sync-tui` for cross-machine repo sync
 - `sshfs/git-sync-tui/` — Rust TUI: git push/pull + Cursor chat sync via cursaves
 

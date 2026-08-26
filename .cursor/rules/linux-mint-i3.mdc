@@ -1,0 +1,44 @@
+---
+description: This machine runs Linux Mint with i3 on X11
+alwaysApply: true
+---
+
+# Linux Mint + i3 (this PC)
+
+This host is **Linux Mint** with **i3** on **X11**. Do not assume Wayland or Hyprland for local desktop work.
+
+## Repo split
+
+- **This PC:** `i3/`, `polybar/`, `picom/`, `rofi/`, `fusuma/`, `lightdm/`, `X11/`
+- **Laptop only** (unless the task is explicitly cross-machine): `hypr/`, `waybar/`
+
+## Defaults for desktop changes
+
+Prefer what is already wired in `i3/config`:
+
+- Window manager: `i3-msg`, binds/`exec` in `i3/config` (`$mod` = Mod4 / Super)
+- Bar: polybar (`polybar-msg`, `polybar/launch.sh`) — not waybar
+- X11 tools: `xdotool`, `xclip`, `maim`, `feh`, `pactl`
+- Mint/XFCE stack: Thunar, nm-applet, blueman, xfce4-power-manager, light-locker
+
+```bash
+# ❌ BAD (Hyprland / this machine)
+hyprctl dispatch workspace 2
+
+# ✅ GOOD (i3 on this PC)
+i3-msg workspace number 2
+```
+
+## Avoid on this machine
+
+Unless the user asks for laptop / Hyprland work: `hyprctl`, edits to `hyprland.conf`, Waybar modules, Wayland-only portals/compositors, sway/`wlr` assumptions.
+
+## Cross-machine scripts
+
+When editing fusuma or shared helpers, keep existing Hypr branches (e.g. `hyprctl` probe in `fusuma/open-launcher.sh`) but implement the **i3/X11 path as primary**.
+
+## Reload / test
+
+- i3: `$mod+Shift+c` (reload) or `$mod+Shift+r` (restart)
+- polybar: `~/.config/polybar/launch.sh`
+- fusuma: restart after `fusuma/config.yml` changes

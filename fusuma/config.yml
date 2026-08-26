@@ -18,18 +18,39 @@ swipe:
     right:
       command: "i3-msg workspace next"
     up:
-      # minimize all windows except active one
-      command: "xdotool key ctrl+alt+d" 
+      command: "/home/gerry/XDG_config/fusuma/open-launcher.sh"
     down:
-      # minimize all windows except active one
-      command: "xdotool key ctrl+alt+d && xdotool keydown alt keydown Tab keyup Tab keydown Shift keydown Tab keyup Tab keyup Shift keyup alt" 
+      command: "xdotool key ctrl+alt+d && xdotool keydown alt keydown Tab keyup Tab keydown Shift keydown Tab keyup Tab keyup Shift keyup alt"
       interval: 2
       threshold: 0.1
+
 pinch:
-  in:
-    command: "xdotool keydown ctrl click 4 keyup ctrl" # Zoom in
-  out:
-    command: "xdotool keydown ctrl click 5 keyup ctrl" # Zoom out
+  2:
+    in:
+      command: "xdotool keydown ctrl click 4 keyup ctrl"
+    out:
+      command: "xdotool keydown ctrl click 5 keyup ctrl"
+  4:
+    in:
+      command: "/home/gerry/XDG_config/fusuma/open-window-switcher.sh"
+      threshold: 0.3
+
 hold:
   4:
-    command: "xdotool key super+Tab" # Activity
+    command: "xdotool key super+Tab"
+
+plugin:
+  inputs:
+    libinput_command_input:
+      enable-tap: true
+      verbose: true
+
+---
+context:
+  application:
+    - rofi
+    - Rofi
+    - hyprlauncher
+tap:
+  2:
+    command: "/home/gerry/XDG_config/fusuma/confirm-selection.sh"

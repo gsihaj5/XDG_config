@@ -2,7 +2,7 @@
 export NVM_DIR="$HOME/.nvm"
 
 __nvm_lazy_load() {
-  unset -f nvm node npm npx __nvm_lazy_load
+  unset -f nvm node npm npx pnpm pnpx __nvm_lazy_load
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
   [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
 }
@@ -11,6 +11,8 @@ nvm()  { __nvm_lazy_load; nvm "$@"; }
 node() { __nvm_lazy_load; node "$@"; }
 npm()  { __nvm_lazy_load; npm "$@"; }
 npx()  { __nvm_lazy_load; npx "$@"; }
+pnpm() { __nvm_lazy_load; pnpm "$@"; }
+pnpx() { __nvm_lazy_load; pnpx "$@"; }
 
 # Lazy-load conda on first `conda` invocation.
 __conda_lazy_load() {
